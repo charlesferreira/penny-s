@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C52202E5699005ED1D1 /* AppDelegate.swift */; };
-		56610C55202E5699005ED1D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C54202E5699005ED1D1 /* ViewController.swift */; };
+		56610C55202E5699005ED1D1 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */; };
 		56610C58202E5699005ED1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C56202E5699005ED1D1 /* Main.storyboard */; };
 		56610C5A202E5699005ED1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56610C59202E5699005ED1D1 /* Assets.xcassets */; };
 		56610C5D202E5699005ED1D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */; };
+		56610C66202E5875005ED1D1 /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56610C4F202E5699005ED1D1 /* NanoChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56610C52202E5699005ED1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56610C54202E5699005ED1D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
 		56610C57202E5699005ED1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56610C59202E5699005ED1D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56610C5C202E5699005ED1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56610C5E202E5699005ED1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				56610C52202E5699005ED1D1 /* AppDelegate.swift */,
-				56610C54202E5699005ED1D1 /* ViewController.swift */,
+				56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */,
 				56610C56202E5699005ED1D1 /* Main.storyboard */,
 				56610C59202E5699005ED1D1 /* Assets.xcassets */,
 				56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */,
 				56610C5E202E5699005ED1D1 /* Info.plist */,
+				56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */,
 			);
 			path = NanoChallenge3;
 			sourceTree = "<group>";
@@ -136,7 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56610C55202E5699005ED1D1 /* ViewController.swift in Sources */,
+				56610C55202E5699005ED1D1 /* InvestmentsViewController.swift in Sources */,
+				56610C66202E5875005ED1D1 /* InvestmentTableViewCell.swift in Sources */,
 				56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
