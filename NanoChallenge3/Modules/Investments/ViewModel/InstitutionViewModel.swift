@@ -12,14 +12,25 @@ final class InstitutionViewModel: ViewModel {
     
     private (set) var institution: Institution
     
+    override var documentID: String? {
+        get { return institution.documentID }
+        set { institution.documentID = newValue }
+    }
+    
     var name: String {
         get { return institution.name }
-        set { institution.name = newValue.trimmingCharacters(in: .whitespacesAndNewlines) }
+        set {
+            institution.name = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
+            isDirty = true
+        }
     }
     
     var hue: CGFloat {
         get { return CGFloat(institution.hue) }
-        set { institution.hue = Float(newValue) }
+        set {
+            institution.hue = Float(newValue)
+            isDirty = true
+        }
     }
     
     convenience override init() {
@@ -31,10 +42,9 @@ final class InstitutionViewModel: ViewModel {
     }
     
     func persist() {
-        db.collection("institutions").addDocument(data: institution.data) { (error) in
+        super.persist(data: institution.data, toCollection: "institutions") { error in
             guard error == nil else {
-                print("Erro ao persistir instituição: \(error!)")
-                return
+                fatalError("Erro ao persistir instituição: \(error!)")
             }
             
             self.delegate?.viewModelDidCreateDocument?()

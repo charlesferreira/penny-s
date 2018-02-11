@@ -12,8 +12,4 @@ struct SavingAccount {
     let goal: Double
     let balance: Double
     let colorHue: Float
-    
-    // todo: resolver problema abaixo (lazy load histórico)
-//    lazy var history: [AccountEntry] = []
-    
 }

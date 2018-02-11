@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstitutionViewController: BaseViewController, HueColorPickerDelegate, ViewModelDelegate, UITextFieldDelegate {
+class InstitutionViewController: BaseViewController {
 
     @IBOutlet weak var backgroundOverlay: UIView!
     @IBOutlet weak var nameLabel: UITextField!
@@ -32,6 +32,7 @@ class InstitutionViewController: BaseViewController, HueColorPickerDelegate, Vie
         nameLabel.becomeFirstResponder()
         nameLabel.addTarget(self, action: #selector(nameLabelChanged), for: .editingChanged)
         
+        updateNavigationBar()
         updateBackgroundColor()
         updateNameLabel()
         updateSaveButton()
@@ -42,9 +43,9 @@ class InstitutionViewController: BaseViewController, HueColorPickerDelegate, Vie
         updateSaveButton()
     }
     
-    func hueColorPickerChanged(sender: HueColorPickerView, hue: CGFloat, point: CGPoint, state: UIGestureRecognizerState) {
-        vm.hue = hue
-        updateBackgroundColor()
+    private func updateNavigationBar() {
+        navigationItem.title = (vm.name.isEmpty ? "Nova" : "Editar") + " instituição"
+        saveButton.title = vm.name.isEmpty ? "Criar" : "OK"
     }
     
     private func updateBackgroundColor() {
@@ -64,10 +65,6 @@ class InstitutionViewController: BaseViewController, HueColorPickerDelegate, Vie
         vm.persist()
     }
     
-    func viewModelDidCreateDocument() {
-        dismiss(animated: true, completion: nil)
-    }
-    
     private func disableUserInteraction() {
         // feedback visual
         saveButton.isEnabled = false
@@ -78,5 +75,19 @@ class InstitutionViewController: BaseViewController, HueColorPickerDelegate, Vie
     private func fixNamePlaceholderColor() {
         nameLabel.attributedPlaceholder = NSAttributedString(string: nameLabel.placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1, alpha: 0.25)])
     }
+}
 
+extension InstitutionViewController: ViewModelDelegate {
+    
+    func viewModelDidCreateDocument() {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension InstitutionViewController: HueColorPickerDelegate {
+    
+    func hueColorPickerChanged(sender: HueColorPickerView, hue: CGFloat, point: CGPoint, state: UIGestureRecognizerState) {
+        vm.hue = hue
+        updateBackgroundColor()
+    }
 }

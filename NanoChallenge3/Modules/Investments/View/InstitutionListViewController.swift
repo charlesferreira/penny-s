@@ -11,7 +11,6 @@ import UIKit
 class InstitutionListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ViewModelDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     lazy var vm = InstitutionListViewModel()
     
@@ -26,19 +25,17 @@ class InstitutionListViewController: UIViewController, UITableViewDelegate, UITa
     
         // view model
         vm.delegate = self
+        vm.observeInstitutionList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        activityIndicator.startAnimating()
-        vm.loadInstitutionList()
+        tableView.reloadData()
     }
     
     func viewModelDidChange() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -80,6 +77,7 @@ class InstitutionListViewController: UIViewController, UITableViewDelegate, UITa
         guard let controller = segue.destination as? InstitutionViewController,
             editingRowIndexPath != nil else { return }
         
+        controller.vm.documentID = vm.documentID(forInstitutionAtIndex: editingRowIndexPath!.row)
         controller.vm.name = vm.name(forInstitutionAtIndex: editingRowIndexPath!.row)
         controller.vm.hue = CGFloat(vm.hue(forInstitutionAtIndex: editingRowIndexPath!.row))
         

@@ -8,7 +8,9 @@
 
 protocol DocumentSerializable {
     
-    init?(data: [String: Any])
+    var documentID: String? { get }
+    
+    init?(documentID: String, data: [String: Any])
     
     var data: [String: Any] { get }
     

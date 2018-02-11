@@ -14,7 +14,22 @@ class ViewModel {
     
     let db: Firestore
     
+    var documentID: String?
+    var isDirty: Bool = false
+    
     init() {
         db = Firestore.firestore()
+    }
+    
+    func persist(data: [String: Any], toCollection path: String, completion: ((Error?) -> Void)?) {
+        guard isDirty else { return }
+        
+        isDirty = false
+        
+        if let documentID = documentID {
+            db.collection(path).document(documentID).setData(data, completion: completion)
+        } else {
+            db.collection(path).addDocument(data: data, completion: completion)
+        }
     }
 }

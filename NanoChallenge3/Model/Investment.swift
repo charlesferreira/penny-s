@@ -16,8 +16,4 @@ struct Investment {
     let liquidity: Int?
     let initialValue: Double
     let balance: Double
-    
-    // todo: lazy load... ???
-//    lazy let history: [AccountEntry]
-    
 }

@@ -16,15 +16,8 @@ final class InstitutionListViewModel: ViewModel {
         return institutions.count
     }
     
-    func loadInstitutionList() {
-        db.collection("institutions").getDocuments { (snapshot, error) in
-            guard let snapshot = snapshot else {
-                fatalError("Erro ao obter lista de instituições: \(error!)")
-            }
-            
-            self.institutions = snapshot.documents.flatMap { Institution(data: $0.data()) }
-            self.delegate?.viewModelDidChange?()
-        }
+    func documentID(forInstitutionAtIndex index: Int) -> String? {
+        return institutions[index].documentID
     }
     
     func name(forInstitutionAtIndex index: Int) -> String {
@@ -33,6 +26,17 @@ final class InstitutionListViewModel: ViewModel {
     
     func hue(forInstitutionAtIndex index: Int) -> Float {
         return institutions[index].hue
+    }
+    
+    func observeInstitutionList() {
+        db.collection("institutions").order(by: "name").addSnapshotListener { (snapshot, error) in
+            guard let snapshot = snapshot, error == nil else {
+                fatalError("Erro ao obter lista de instituições: \(error!)")
+            }
+            
+            self.institutions = snapshot.documents.flatMap { Institution(documentID: $0.documentID, data: $0.data()) }
+            self.delegate?.viewModelDidChange?()
+        }
     }
     
 }

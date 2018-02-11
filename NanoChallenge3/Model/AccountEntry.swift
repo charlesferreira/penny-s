@@ -13,5 +13,4 @@ struct AccountEntry {
     let date: Date
     let value: Double
     let note: String? 
-    
 }

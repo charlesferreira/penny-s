@@ -11,8 +11,4 @@ struct Product {
     let name: String
     let note: String?
     let balance: Double
-    
-    // todo: mesma coisa... lazy load
-//    lazy let investments: [Investment]
-    
 }
