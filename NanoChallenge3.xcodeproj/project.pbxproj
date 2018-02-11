@@ -8,19 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		5616D3FF202E6345008A59E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */; };
-		5616D401202E6387008A59E6 /* InvestmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D400202E6387008A59E6 /* InvestmentsViewModel.swift */; };
-		5616D405202E666E008A59E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D404202E666E008A59E6 /* ViewModel.swift */; };
 		5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D407202FD618008A59E6 /* SavingAccount.swift */; };
 		5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D409202FD780008A59E6 /* AccountEntry.swift */; };
 		5616D40C202FDB66008A59E6 /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D40B202FDB66008A59E6 /* Institution.swift */; };
 		5616D40E202FDD14008A59E6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D40D202FDD14008A59E6 /* Product.swift */; };
 		5616D410202FDE28008A59E6 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D40F202FDE28008A59E6 /* Investment.swift */; };
+		5616D41320304A74008A59E6 /* InstitutionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D41220304A74008A59E6 /* InstitutionListViewModel.swift */; };
+		5616D41F20304BF3008A59E6 /* InstitutionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D41E20304BF3008A59E6 /* InstitutionTableViewCell.swift */; };
+		5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D4212030541A008A59E6 /* DocumentSerializable.swift */; };
+		5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D4262030751F008A59E6 /* HueColorPickerView.swift */; };
+		5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D42820308524008A59E6 /* InstitutionViewController.swift */; };
 		56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C52202E5699005ED1D1 /* AppDelegate.swift */; };
-		56610C55202E5699005ED1D1 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */; };
+		56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C54202E5699005ED1D1 /* InstitutionListViewController.swift */; };
 		56610C58202E5699005ED1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C56202E5699005ED1D1 /* Main.storyboard */; };
 		56610C5A202E5699005ED1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56610C59202E5699005ED1D1 /* Assets.xcassets */; };
 		56610C5D202E5699005ED1D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */; };
-		56610C66202E5875005ED1D1 /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */; };
+		569A886C2030AAF200620364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A886B2030AAF200620364 /* BaseViewController.swift */; };
+		56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */; };
+		56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */; };
+		56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA52030936C006EF3C4 /* ViewModel.swift */; };
 		8EE172D94CDCD24AC3F3CF2C /* Pods_NanoChallenge3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,21 +34,27 @@
 		14BB8AF6AD380960B8E6901C /* Pods-NanoChallenge3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3.debug.xcconfig"; sourceTree = "<group>"; };
 		40855737DC81F3344F9296AF /* Pods-NanoChallenge3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge3.release.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3.release.xcconfig"; sourceTree = "<group>"; };
 		5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5616D400202E6387008A59E6 /* InvestmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewModel.swift; sourceTree = "<group>"; };
-		5616D404202E666E008A59E6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5616D407202FD618008A59E6 /* SavingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccount.swift; sourceTree = "<group>"; };
 		5616D409202FD780008A59E6 /* AccountEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntry.swift; sourceTree = "<group>"; };
 		5616D40B202FDB66008A59E6 /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
 		5616D40D202FDD14008A59E6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5616D40F202FDE28008A59E6 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
+		5616D41220304A74008A59E6 /* InstitutionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionListViewModel.swift; sourceTree = "<group>"; };
+		5616D41E20304BF3008A59E6 /* InstitutionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionTableViewCell.swift; sourceTree = "<group>"; };
+		5616D4212030541A008A59E6 /* DocumentSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializable.swift; sourceTree = "<group>"; };
+		5616D4262030751F008A59E6 /* HueColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueColorPickerView.swift; sourceTree = "<group>"; };
+		5616D42820308524008A59E6 /* InstitutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionViewController.swift; sourceTree = "<group>"; };
 		56610C4F202E5699005ED1D1 /* NanoChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56610C52202E5699005ED1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
+		56610C54202E5699005ED1D1 /* InstitutionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionListViewController.swift; sourceTree = "<group>"; };
 		56610C57202E5699005ED1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56610C59202E5699005ED1D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56610C5C202E5699005ED1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56610C5E202E5699005ED1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentTableViewCell.swift; sourceTree = "<group>"; };
+		569A886B2030AAF200620364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelDelegate.swift; path = NanoChallenge3/Modules/Common/ViewModel/ViewModelDelegate.swift; sourceTree = SOURCE_ROOT; };
+		56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstitutionViewModel.swift; path = NanoChallenge3/Modules/Investments/ViewModel/InstitutionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		56C2FEA52030936C006EF3C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +82,7 @@
 		5616D406202FD60E008A59E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5616D42020305404008A59E6 /* Protocol */,
 				5616D407202FD618008A59E6 /* SavingAccount.swift */,
 				5616D409202FD780008A59E6 /* AccountEntry.swift */,
 				5616D40B202FDB66008A59E6 /* Institution.swift */,
@@ -77,6 +90,93 @@
 				5616D40F202FDE28008A59E6 /* Investment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5616D41120304A2B008A59E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5616D41220304A74008A59E6 /* InstitutionListViewModel.swift */,
+				56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5616D41720304ACA008A59E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5616D41D20304BDA008A59E6 /* Cells */,
+				56610C54202E5699005ED1D1 /* InstitutionListViewController.swift */,
+				5616D42820308524008A59E6 /* InstitutionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5616D41820304AE2008A59E6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				56C2FE9A2030891C006EF3C4 /* Common */,
+				5616D41A20304AF5008A59E6 /* Investments */,
+				5616D41920304AE8008A59E6 /* SavingAccounts */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5616D41920304AE8008A59E6 /* SavingAccounts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SavingAccounts;
+			sourceTree = "<group>";
+		};
+		5616D41A20304AF5008A59E6 /* Investments */ = {
+			isa = PBXGroup;
+			children = (
+				5616D41720304ACA008A59E6 /* View */,
+				5616D41120304A2B008A59E6 /* ViewModel */,
+			);
+			path = Investments;
+			sourceTree = "<group>";
+		};
+		5616D41B20304B23008A59E6 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */,
+				56610C5E202E5699005ED1D1 /* Info.plist */,
+				56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		5616D41C20304B66008A59E6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				56610C59202E5699005ED1D1 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5616D41D20304BDA008A59E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5616D41E20304BF3008A59E6 /* InstitutionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5616D42020305404008A59E6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5616D4212030541A008A59E6 /* DocumentSerializable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5616D42320306911008A59E6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5616D4262030751F008A59E6 /* HueColorPickerView.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		56610C46202E5699005ED1D1 = {
@@ -100,19 +200,41 @@
 		56610C51202E5699005ED1D1 /* NanoChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
+				5616D41C20304B66008A59E6 /* Assets */,
+				5616D41B20304B23008A59E6 /* Misc */,
 				5616D406202FD60E008A59E6 /* Model */,
-				5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */,
-				56610C52202E5699005ED1D1 /* AppDelegate.swift */,
-				56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */,
-				56610C56202E5699005ED1D1 /* Main.storyboard */,
-				56610C59202E5699005ED1D1 /* Assets.xcassets */,
-				56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */,
-				56610C5E202E5699005ED1D1 /* Info.plist */,
-				56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */,
-				5616D400202E6387008A59E6 /* InvestmentsViewModel.swift */,
-				5616D404202E666E008A59E6 /* ViewModel.swift */,
+				5616D41820304AE2008A59E6 /* Modules */,
+				5616D42320306911008A59E6 /* Util */,
 			);
 			path = NanoChallenge3;
+			sourceTree = "<group>";
+		};
+		56C2FE9A2030891C006EF3C4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				56C2FEA420309360006EF3C4 /* ViewModel */,
+				56C2FE9B20308924006EF3C4 /* View */,
+				56610C52202E5699005ED1D1 /* AppDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		56C2FE9B20308924006EF3C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56610C56202E5699005ED1D1 /* Main.storyboard */,
+				569A886B2030AAF200620364 /* BaseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56C2FEA420309360006EF3C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56C2FEA52030936C006EF3C4 /* ViewModel.swift */,
+				56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D4C017551EC3CD3F05EE6D53 /* Frameworks */ = {
@@ -271,13 +393,19 @@
 			files = (
 				5616D410202FDE28008A59E6 /* Investment.swift in Sources */,
 				5616D40C202FDB66008A59E6 /* Institution.swift in Sources */,
-				56610C55202E5699005ED1D1 /* InvestmentsViewController.swift in Sources */,
-				5616D401202E6387008A59E6 /* InvestmentsViewModel.swift in Sources */,
-				56610C66202E5875005ED1D1 /* InvestmentTableViewCell.swift in Sources */,
+				56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */,
+				56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */,
+				5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */,
 				5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */,
-				5616D405202E666E008A59E6 /* ViewModel.swift in Sources */,
+				56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */,
+				569A886C2030AAF200620364 /* BaseViewController.swift in Sources */,
+				5616D41F20304BF3008A59E6 /* InstitutionTableViewCell.swift in Sources */,
 				5616D40E202FDD14008A59E6 /* Product.swift in Sources */,
+				5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */,
+				5616D41320304A74008A59E6 /* InstitutionListViewModel.swift in Sources */,
+				5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */,
 				5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */,
+				56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */,
 				56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,9 +546,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2978C4JMXA;
-				INFOPLIST_FILE = NanoChallenge3/Info.plist;
+				INFOPLIST_FILE = NanoChallenge3/Misc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.charlesferreira.NanoChallenge3;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.charlesferreira.Penny-s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,9 +562,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2978C4JMXA;
-				INFOPLIST_FILE = NanoChallenge3/Info.plist;
+				INFOPLIST_FILE = NanoChallenge3/Misc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.charlesferreira.NanoChallenge3;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.charlesferreira.Penny-s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

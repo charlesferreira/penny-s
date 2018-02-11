@@ -14,6 +14,6 @@ struct SavingAccount {
     let colorHue: Float
     
     // todo: resolver problema abaixo (lazy load histórico)
-    lazy var history: [AccountEntry] = []
+//    lazy var history: [AccountEntry] = []
     
 }

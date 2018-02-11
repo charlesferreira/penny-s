@@ -13,6 +13,6 @@ struct Product {
     let balance: Double
     
     // todo: mesma coisa... lazy load
-    lazy let investments: [Investment]
+//    lazy let investments: [Investment]
     
 }

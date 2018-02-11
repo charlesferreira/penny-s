@@ -8,10 +8,25 @@
 
 struct Institution {
     
-    let name: String
-    let colorHue: Float
+    var name: String = ""
+    var hue: Float = 0.66
+
+}
+
+extension Institution: DocumentSerializable {
     
-    // todo: lazy load... talvez uma Factory com lista de produtos e outa sem??? :D
-    lazy var products: [Product]
+    init?(data: [String : Any]) {
+        guard let name = data["name"] as? String,
+            let hue = data["hue"] as? Float else { return nil }
+        
+        self.init(name: name, hue: hue)
+    }
+    
+    var data: [String : Any] {
+        return [
+            "name": name,
+            "hue": hue
+        ]
+    }
     
 }
