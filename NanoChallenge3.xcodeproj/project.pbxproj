@@ -7,15 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5616D3FF202E6345008A59E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */; };
+		5616D401202E6387008A59E6 /* InvestmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D400202E6387008A59E6 /* InvestmentsViewModel.swift */; };
+		5616D405202E666E008A59E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D404202E666E008A59E6 /* ViewModel.swift */; };
+		5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D407202FD618008A59E6 /* SavingAccount.swift */; };
+		5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D409202FD780008A59E6 /* AccountEntry.swift */; };
+		5616D40C202FDB66008A59E6 /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D40B202FDB66008A59E6 /* Institution.swift */; };
+		5616D40E202FDD14008A59E6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D40D202FDD14008A59E6 /* Product.swift */; };
+		5616D410202FDE28008A59E6 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D40F202FDE28008A59E6 /* Investment.swift */; };
 		56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C52202E5699005ED1D1 /* AppDelegate.swift */; };
 		56610C55202E5699005ED1D1 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */; };
 		56610C58202E5699005ED1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C56202E5699005ED1D1 /* Main.storyboard */; };
 		56610C5A202E5699005ED1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56610C59202E5699005ED1D1 /* Assets.xcassets */; };
 		56610C5D202E5699005ED1D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */; };
 		56610C66202E5875005ED1D1 /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */; };
+		8EE172D94CDCD24AC3F3CF2C /* Pods_NanoChallenge3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14BB8AF6AD380960B8E6901C /* Pods-NanoChallenge3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3.debug.xcconfig"; sourceTree = "<group>"; };
+		40855737DC81F3344F9296AF /* Pods-NanoChallenge3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge3.release.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3.release.xcconfig"; sourceTree = "<group>"; };
+		5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5616D400202E6387008A59E6 /* InvestmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewModel.swift; sourceTree = "<group>"; };
+		5616D404202E666E008A59E6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5616D407202FD618008A59E6 /* SavingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccount.swift; sourceTree = "<group>"; };
+		5616D409202FD780008A59E6 /* AccountEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntry.swift; sourceTree = "<group>"; };
+		5616D40B202FDB66008A59E6 /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
+		5616D40D202FDD14008A59E6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		5616D40F202FDE28008A59E6 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
 		56610C4F202E5699005ED1D1 /* NanoChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56610C52202E5699005ED1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +43,7 @@
 		56610C5C202E5699005ED1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56610C5E202E5699005ED1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentTableViewCell.swift; sourceTree = "<group>"; };
+		B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE172D94CDCD24AC3F3CF2C /* Pods_NanoChallenge3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C9C277BE69F37D910E15A85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14BB8AF6AD380960B8E6901C /* Pods-NanoChallenge3.debug.xcconfig */,
+				40855737DC81F3344F9296AF /* Pods-NanoChallenge3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5616D406202FD60E008A59E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5616D407202FD618008A59E6 /* SavingAccount.swift */,
+				5616D409202FD780008A59E6 /* AccountEntry.swift */,
+				5616D40B202FDB66008A59E6 /* Institution.swift */,
+				5616D40D202FDD14008A59E6 /* Product.swift */,
+				5616D40F202FDE28008A59E6 /* Investment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		56610C46202E5699005ED1D1 = {
 			isa = PBXGroup;
 			children = (
 				56610C51202E5699005ED1D1 /* NanoChallenge3 */,
 				56610C50202E5699005ED1D1 /* Products */,
+				2C9C277BE69F37D910E15A85 /* Pods */,
+				D4C017551EC3CD3F05EE6D53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +100,8 @@
 		56610C51202E5699005ED1D1 /* NanoChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
+				5616D406202FD60E008A59E6 /* Model */,
+				5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */,
 				56610C52202E5699005ED1D1 /* AppDelegate.swift */,
 				56610C54202E5699005ED1D1 /* InvestmentsViewController.swift */,
 				56610C56202E5699005ED1D1 /* Main.storyboard */,
@@ -63,8 +109,18 @@
 				56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */,
 				56610C5E202E5699005ED1D1 /* Info.plist */,
 				56610C64202E5875005ED1D1 /* InvestmentTableViewCell.swift */,
+				5616D400202E6387008A59E6 /* InvestmentsViewModel.swift */,
+				5616D404202E666E008A59E6 /* ViewModel.swift */,
 			);
 			path = NanoChallenge3;
+			sourceTree = "<group>";
+		};
+		D4C017551EC3CD3F05EE6D53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56610C61202E5699005ED1D1 /* Build configuration list for PBXNativeTarget "NanoChallenge3" */;
 			buildPhases = (
+				A2AFC3EB5AFA7A2A13BF68B7 /* [CP] Check Pods Manifest.lock */,
 				56610C4B202E5699005ED1D1 /* Sources */,
 				56610C4C202E5699005ED1D1 /* Frameworks */,
 				56610C4D202E5699005ED1D1 /* Resources */,
+				FA9003694477083560A8AECA /* [CP] Embed Pods Frameworks */,
+				84DEE54AD721D9454FD55E5B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56610C5D202E5699005ED1D1 /* LaunchScreen.storyboard in Resources */,
+				5616D3FF202E6345008A59E6 /* GoogleService-Info.plist in Resources */,
 				56610C5A202E5699005ED1D1 /* Assets.xcassets in Resources */,
 				56610C58202E5699005ED1D1 /* Main.storyboard in Resources */,
 			);
@@ -134,13 +194,90 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84DEE54AD721D9454FD55E5B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2AFC3EB5AFA7A2A13BF68B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NanoChallenge3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA9003694477083560A8AECA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56610C4B202E5699005ED1D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5616D410202FDE28008A59E6 /* Investment.swift in Sources */,
+				5616D40C202FDB66008A59E6 /* Institution.swift in Sources */,
 				56610C55202E5699005ED1D1 /* InvestmentsViewController.swift in Sources */,
+				5616D401202E6387008A59E6 /* InvestmentsViewModel.swift in Sources */,
 				56610C66202E5875005ED1D1 /* InvestmentTableViewCell.swift in Sources */,
+				5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */,
+				5616D405202E666E008A59E6 /* ViewModel.swift in Sources */,
+				5616D40E202FDD14008A59E6 /* Product.swift in Sources */,
+				5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */,
 				56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +413,7 @@
 		};
 		56610C62202E5699005ED1D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14BB8AF6AD380960B8E6901C /* Pods-NanoChallenge3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +429,7 @@
 		};
 		56610C63202E5699005ED1D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40855737DC81F3344F9296AF /* Pods-NanoChallenge3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

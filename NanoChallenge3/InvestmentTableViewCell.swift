@@ -13,11 +13,10 @@ class InvestmentTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        nameLabel.text = "CDB"
-        balanceLabel.text = "10.000,00"
+    var investment: Investment!
+    
+    func layout(for investment: Investment) {
+        self.investment = investment
     }
     
 }
