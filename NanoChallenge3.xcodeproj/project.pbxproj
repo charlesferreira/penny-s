@@ -30,6 +30,14 @@
 		569A886C2030AAF200620364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A886B2030AAF200620364 /* BaseViewController.swift */; };
 		569A887020310E5400620364 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A886F20310E5400620364 /* ProductListViewController.swift */; };
 		569A887220310FAD00620364 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A887120310FAD00620364 /* ProductTableViewCell.swift */; };
+		56A5DDA92031F9EA002FBACB /* Investments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A5DDA82031F9EA002FBACB /* Investments.storyboard */; };
+		56A5DDAB2031FA8B002FBACB /* Investments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A5DDAA2031FA8A002FBACB /* Investments.storyboard */; };
+		56A5DDAF2031FDF9002FBACB /* SavingAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A5DDAE2031FDF8002FBACB /* SavingAccounts.storyboard */; };
+		56A5DDB620320090002FBACB /* SavingAccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDB520320090002FBACB /* SavingAccountListViewController.swift */; };
+		56A5DDB8203201A3002FBACB /* SavingAccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDB7203201A3002FBACB /* SavingAccountListViewModel.swift */; };
+		56A5DDBA2032062A002FBACB /* SavingAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDB92032062A002FBACB /* SavingAccountTableViewCell.swift */; };
+		56A5DDBC20320700002FBACB /* SavingAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDBB20320700002FBACB /* SavingAccountViewController.swift */; };
+		56A5DDBE2032077C002FBACB /* SavingAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDBD2032077C002FBACB /* SavingAccountViewModel.swift */; };
 		56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */; };
 		56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */; };
 		56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA52030936C006EF3C4 /* ViewModel.swift */; };
@@ -64,6 +72,14 @@
 		569A886B2030AAF200620364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		569A886F20310E5400620364 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		569A887120310FAD00620364 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		56A5DDA82031F9EA002FBACB /* Investments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Investments.storyboard; sourceTree = "<group>"; };
+		56A5DDAA2031FA8A002FBACB /* Investments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Investments.storyboard; sourceTree = "<group>"; };
+		56A5DDAE2031FDF8002FBACB /* SavingAccounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavingAccounts.storyboard; sourceTree = "<group>"; };
+		56A5DDB520320090002FBACB /* SavingAccountListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountListViewController.swift; sourceTree = "<group>"; };
+		56A5DDB7203201A3002FBACB /* SavingAccountListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountListViewModel.swift; sourceTree = "<group>"; };
+		56A5DDB92032062A002FBACB /* SavingAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountTableViewCell.swift; sourceTree = "<group>"; };
+		56A5DDBB20320700002FBACB /* SavingAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountViewController.swift; sourceTree = "<group>"; };
+		56A5DDBD2032077C002FBACB /* SavingAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountViewModel.swift; sourceTree = "<group>"; };
 		56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelDelegate.swift; path = NanoChallenge3/Modules/Common/ViewModel/ViewModelDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstitutionViewModel.swift; path = NanoChallenge3/Modules/Investments/ViewModel/InstitutionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA52030936C006EF3C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -126,8 +142,9 @@
 		5616D41720304ACA008A59E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				569A886E20310E0700620364 /* Controller */,
 				5616D41D20304BDA008A59E6 /* Cell */,
+				569A886E20310E0700620364 /* Controller */,
+				56A5DDA32031F944002FBACB /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,6 +162,8 @@
 		5616D41920304AE8008A59E6 /* SavingAccounts */ = {
 			isa = PBXGroup;
 			children = (
+				56A5DDAC2031FDAE002FBACB /* View */,
+				56A5DDB020320011002FBACB /* ViewModel */,
 			);
 			path = SavingAccounts;
 			sourceTree = "<group>";
@@ -239,6 +258,58 @@
 				5616D42820308524008A59E6 /* InstitutionViewController.swift */,
 				569A886F20310E5400620364 /* ProductListViewController.swift */,
 				565056EB203113B5008D3237 /* ProductViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56A5DDA32031F944002FBACB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				56A5DDAA2031FA8A002FBACB /* Investments.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		56A5DDAC2031FDAE002FBACB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56A5DDB220320022002FBACB /* Cell */,
+				56A5DDB320320026002FBACB /* Controller */,
+				56A5DDAD2031FDB6002FBACB /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56A5DDAD2031FDB6002FBACB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				56A5DDAE2031FDF8002FBACB /* SavingAccounts.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		56A5DDB020320011002FBACB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56A5DDB7203201A3002FBACB /* SavingAccountListViewModel.swift */,
+				56A5DDBD2032077C002FBACB /* SavingAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56A5DDB220320022002FBACB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				56A5DDB92032062A002FBACB /* SavingAccountTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		56A5DDB320320026002FBACB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56A5DDB520320090002FBACB /* SavingAccountListViewController.swift */,
+				56A5DDBB20320700002FBACB /* SavingAccountViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,9 +413,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				56610C5D202E5699005ED1D1 /* LaunchScreen.storyboard in Resources */,
+				56A5DDA92031F9EA002FBACB /* Investments.storyboard in Resources */,
 				5616D3FF202E6345008A59E6 /* GoogleService-Info.plist in Resources */,
+				56A5DDAF2031FDF9002FBACB /* SavingAccounts.storyboard in Resources */,
 				56610C5A202E5699005ED1D1 /* Assets.xcassets in Resources */,
 				56610C58202E5699005ED1D1 /* Main.storyboard in Resources */,
+				56A5DDAB2031FA8B002FBACB /* Investments.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,10 +499,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A5DDBA2032062A002FBACB /* SavingAccountTableViewCell.swift in Sources */,
+				56A5DDBE2032077C002FBACB /* SavingAccountViewModel.swift in Sources */,
+				56A5DDB8203201A3002FBACB /* SavingAccountListViewModel.swift in Sources */,
 				5616D410202FDE28008A59E6 /* Investment.swift in Sources */,
 				569A887020310E5400620364 /* ProductListViewController.swift in Sources */,
 				5616D40C202FDB66008A59E6 /* Institution.swift in Sources */,
 				56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */,
+				56A5DDBC20320700002FBACB /* SavingAccountViewController.swift in Sources */,
 				56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */,
 				5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */,
 				5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */,
@@ -439,6 +517,7 @@
 				569A887220310FAD00620364 /* ProductTableViewCell.swift in Sources */,
 				5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */,
 				5616D41320304A74008A59E6 /* InstitutionListViewModel.swift in Sources */,
+				56A5DDB620320090002FBACB /* SavingAccountListViewController.swift in Sources */,
 				565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */,
 				5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */,
 				5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */,

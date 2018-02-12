@@ -117,7 +117,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
             self.performSegue(withIdentifier: "editProduct", sender: self)
         }
         
-        action.image = UIImage(named: "icon-settings")
+//        action.image = UIImage(named: "icon-settings")
         action.backgroundColor = UIColor(white: 0.33, alpha: 0.5)
         return action
     }

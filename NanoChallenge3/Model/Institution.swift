@@ -18,9 +18,8 @@ extension Institution: DocumentSerializable {
     
     init?(documentID: String, data: [String : Any]) {
         guard let name = data["name"] as? String,
-            let hue = data["hue"] as? Float else { return nil }
-        
-        let balance = data["balance"] as? Double ?? 0
+            let hue = data["hue"] as? Float,
+            let balance = data["balance"] as? Double else { return nil }
         
         self.init(documentID: documentID, name: name, hue: hue, balance: balance)
     }
