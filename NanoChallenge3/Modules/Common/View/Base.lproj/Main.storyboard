@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,6 +81,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="CTk-2k-vQ0">
+                                                    <rect key="frame" x="349" y="21" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="CTk-2k-vQ0" secondAttribute="height" multiplier="1:1" id="1l8-SV-Odo"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CDB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qui-1V-6or">
                                                     <rect key="frame" x="15" y="14" width="345" height="33.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
@@ -93,7 +101,10 @@
                                                 <constraint firstItem="MCv-aJ-FM2" firstAttribute="centerY" secondItem="vjm-hq-Ns8" secondAttribute="centerY" id="Y8g-rX-WCj"/>
                                                 <constraint firstItem="B0L-TH-fzc" firstAttribute="centerX" secondItem="MCv-aJ-FM2" secondAttribute="centerX" id="cHT-ls-Be9"/>
                                                 <constraint firstItem="MCv-aJ-FM2" firstAttribute="width" secondItem="vjm-hq-Ns8" secondAttribute="width" id="hk3-Jg-TBL"/>
+                                                <constraint firstAttribute="trailing" secondItem="CTk-2k-vQ0" secondAttribute="trailing" constant="8" id="moE-me-ZIJ"/>
+                                                <constraint firstItem="CTk-2k-vQ0" firstAttribute="centerY" secondItem="vjm-hq-Ns8" secondAttribute="centerY" id="oCF-Kb-cEc"/>
                                                 <constraint firstAttribute="trailing" secondItem="qui-1V-6or" secondAttribute="trailing" constant="15" id="q2h-Da-ssN"/>
+                                                <constraint firstItem="CTk-2k-vQ0" firstAttribute="height" secondItem="vjm-hq-Ns8" secondAttribute="height" multiplier="0.3" id="qG7-kM-cfg"/>
                                                 <constraint firstItem="B0L-TH-fzc" firstAttribute="width" secondItem="MCv-aJ-FM2" secondAttribute="width" id="tKn-Ea-sRY"/>
                                                 <constraint firstItem="qui-1V-6or" firstAttribute="leading" secondItem="vjm-hq-Ns8" secondAttribute="leading" constant="15" id="vTh-pF-zfp"/>
                                                 <constraint firstItem="B0L-TH-fzc" firstAttribute="height" secondItem="MCv-aJ-FM2" secondAttribute="height" id="wIH-5H-YLw"/>
@@ -138,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1926" y="132"/>
         </scene>
-        <!--Product List View Controller-->
+        <!--Sofisa-->
         <scene sceneID="pec-Cq-W1C">
             <objects>
-                <viewController id="Uey-Qj-4aQ" customClass="ProductListViewController" customModule="NanoChallenge3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uey-Qj-4aQ" customClass="ProductListViewController" customModule="NanoChallenge3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZRC-Lu-Jnk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +187,40 @@
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="6n7-qp-KJ6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <subviews>
+                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4Y-xA-WLd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-pK-2uM">
+                                            <rect key="frame" x="20" y="0.0" width="335" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQW-Eh-5za">
+                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="44"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="20.000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G42-aq-RJ7">
+                                                    <rect key="frame" x="258" y="0.0" width="77" height="44"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="fSD-pK-2uM" firstAttribute="centerY" secondItem="6n7-qp-KJ6" secondAttribute="centerY" id="1om-it-6LQ"/>
+                                        <constraint firstItem="fSD-pK-2uM" firstAttribute="height" secondItem="6n7-qp-KJ6" secondAttribute="height" id="8gb-Mx-yGk"/>
+                                        <constraint firstItem="fSD-pK-2uM" firstAttribute="leading" secondItem="6n7-qp-KJ6" secondAttribute="leading" constant="20" id="Acl-2O-Bgb"/>
+                                        <constraint firstAttribute="trailing" secondItem="fSD-pK-2uM" secondAttribute="trailing" constant="20" id="TU8-06-EBT"/>
+                                        <constraint firstItem="s4Y-xA-WLd" firstAttribute="height" secondItem="6n7-qp-KJ6" secondAttribute="height" id="exO-zv-jNN"/>
+                                        <constraint firstItem="s4Y-xA-WLd" firstAttribute="width" secondItem="6n7-qp-KJ6" secondAttribute="width" id="hgm-tc-LRl"/>
+                                        <constraint firstItem="s4Y-xA-WLd" firstAttribute="centerX" secondItem="6n7-qp-KJ6" secondAttribute="centerX" id="mzD-oF-9Es"/>
+                                        <constraint firstItem="s4Y-xA-WLd" firstAttribute="centerY" secondItem="6n7-qp-KJ6" secondAttribute="centerY" id="zZU-ET-e4X"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ylj-l1-BC4">
@@ -186,7 +230,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3E-EP-fXj">
+                                                <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3E-EP-fXj" userLabel="Background">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
@@ -217,6 +261,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SHP-9N-ZC0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Sofisa" id="JP4-ai-c5W"/>
                     <connections>
                         <outlet property="tableView" destination="pWO-d5-Xzf" id="RFN-Om-Ax2"/>
                     </connections>
@@ -468,5 +513,6 @@
         <image name="bg-investments" width="540" height="960"/>
         <image name="icon-accounts" width="32" height="32"/>
         <image name="icon-investment" width="32" height="32"/>
+        <image name="right-arrow" width="32" height="32"/>
     </resources>
 </document>
