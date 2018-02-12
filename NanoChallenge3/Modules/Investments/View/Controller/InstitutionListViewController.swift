@@ -12,9 +12,9 @@ class InstitutionListViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    lazy var vm = InstitutionListViewModel()
+    private lazy var vm = InstitutionListViewModel()
     
-    var editingRowIndexPath: IndexPath?
+    var subjectCellIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,19 +34,29 @@ class InstitutionListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controller = segue.destination as? InstitutionViewController,
-            editingRowIndexPath != nil else { return }
+        guard subjectCellIndexPath != nil else { return }
         
-        controller.vm.documentID = vm.documentID(forInstitutionAtIndex: editingRowIndexPath!.row)
-        controller.vm.name = vm.name(forInstitutionAtIndex: editingRowIndexPath!.row)
-        controller.vm.hue = vm.hue(forInstitutionAtIndex: editingRowIndexPath!.row)
+        // reúne os dados célula em questão
+        let documentID = vm.documentID(forInstitutionAtIndex: subjectCellIndexPath!.row)
+        let name = vm.name(forInstitutionAtIndex: subjectCellIndexPath!.row)
+        let hue = vm.hue(forInstitutionAtIndex: subjectCellIndexPath!.row)
+        let balance = vm.balance(forInstitutionAtIndex: subjectCellIndexPath!.row)
         
-        editingRowIndexPath = nil
+        // prepara para edição da instituição
+        if let controller = segue.destination as? InstitutionViewController {
+            controller.setup(documentID: documentID, name: name, hue: hue)
+        }
+            
+        // prepara para lista de produtos
+        else if let controller = segue.destination as? ProductListViewController {
+            controller.setup(documentID: documentID, name: name, hue: hue, balance: balance)
+        }
+        
+        subjectCellIndexPath = nil
     }
     
-    // método vazio, apenas para criar um unwind segue no storyboard
+    // cria um unwind segue no storyboard (método intencionalmente vazio)
     @IBAction func backToInstitutionList(unwind: UIStoryboardSegue) {}
-
 }
 
 extension InstitutionListViewController: ViewModelDelegate {
@@ -74,7 +84,9 @@ extension InstitutionListViewController: UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
+    // lista os produtos da instituição selecionada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        subjectCellIndexPath = indexPath
         performSegue(withIdentifier: "listProducts", sender: self)
     }
     
@@ -88,7 +100,7 @@ extension InstitutionListViewController: UITableViewDelegate, UITableViewDataSou
     // ação de edicão da célula
     func contextualEditAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
-            self.editingRowIndexPath = indexPath
+            self.subjectCellIndexPath = indexPath
             self.performSegue(withIdentifier: "editInstitution", sender: self)
         }
         

@@ -31,6 +31,14 @@ final class InstitutionViewModel: ViewModel {
         }
     }
     
+    var balance: Double {
+        get { return institution.balance }
+        set {
+            institution.balance = newValue
+            isDirty = true
+        }
+    }
+    
     convenience override init() {
         self.init(institution: Institution())
     }

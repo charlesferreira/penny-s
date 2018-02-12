@@ -31,9 +31,9 @@ final class ProductListViewModel: ViewModel {
     }
     
     func observeProductList() {
-        db.collection("institutions").order(by: "name").addSnapshotListener { (snapshot, error) in
+        db.collection("products").order(by: "name").addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot, error == nil else {
-                fatalError("Erro ao obter lista de instituições: \(error!)")
+                fatalError("Erro ao obter lista de produtos: \(error!)")
             }
             
             self.products = snapshot.documents.flatMap { Product(documentID: $0.documentID, data: $0.data()) }

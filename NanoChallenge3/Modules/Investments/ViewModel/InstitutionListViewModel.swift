@@ -26,6 +26,10 @@ final class InstitutionListViewModel: ViewModel {
         return institutions[index].hue
     }
     
+    func balance(forInstitutionAtIndex index: Int) -> Double {
+        return institutions[index].balance
+    }
+    
     func observeInstitutionList() {
         db.collection("institutions").order(by: "name").addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot, error == nil else {

@@ -11,10 +11,20 @@ import UIKit
 class ProductListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var balanceBackgroundTint: UIView!
+    @IBOutlet weak var balanceLabel: UILabel!
     
-    lazy var vm = ProductListViewModel()
+    private lazy var institution = InstitutionViewModel()
+    private lazy var vm = ProductListViewModel()
     
-    var editingRowIndexPath: IndexPath?
+    var subjectCellIndexPath: IndexPath?
+    
+    func setup(documentID: String?, name: String, hue: Float, balance: Double) {
+        institution.documentID = documentID
+        institution.name = name
+        institution.hue = hue
+        institution.balance = balance
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +36,14 @@ class ProductListViewController: BaseViewController {
         // view model
         vm.delegate = self
         vm.observeProductList()
+        
+        updateLayout()
+    }
+    
+    private func updateLayout() {
+        navigationItem.title = institution.name
+        balanceBackgroundTint.backgroundColor = UIColor(hue: CGFloat(institution.hue), saturation: 1, brightness: 1, alpha: 1)
+        balanceLabel.text = institution.balance.asCurrency(symbol: "R$ ")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,19 +52,23 @@ class ProductListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controller = segue.destination as? ProductViewController,
-            editingRowIndexPath != nil else { return }
+        guard subjectCellIndexPath != nil else { return }
         
-        controller.vm.documentID = vm.documentID(forProductAtIndex: editingRowIndexPath!.row)
-        controller.vm.name = vm.name(forProductAtIndex: editingRowIndexPath!.row)
-        controller.vm.note = vm.note(forProductAtIndex: editingRowIndexPath!.row)
+        // reúne os dados célula em questão
+        let documentID = vm.documentID(forProductAtIndex: subjectCellIndexPath!.row)
+        let name = vm.name(forProductAtIndex: subjectCellIndexPath!.row)
+        let note = vm.note(forProductAtIndex: subjectCellIndexPath!.row)
         
-        editingRowIndexPath = nil
+        // prepara para edição do produto
+        if let controller = segue.destination as? ProductViewController {
+            controller.setup(documentID: documentID, name: name, note: note)
+        }
+        
+        subjectCellIndexPath = nil
     }
     
-    // método vazio, apenas para criar um unwind segue no storyboard
+    // cria um unwind segue no storyboard (método intencionalmente vazio)
     @IBAction func backToProductList(unwind: UIStoryboardSegue) {}
-    
 }
 
 extension ProductListViewController: ViewModelDelegate {
@@ -84,7 +106,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     // ação de edicão da célula
     func contextualEditAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
-            self.editingRowIndexPath = indexPath
+            self.subjectCellIndexPath = indexPath
             self.performSegue(withIdentifier: "editProduct", sender: self)
         }
         

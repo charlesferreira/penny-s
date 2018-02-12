@@ -16,7 +16,13 @@ class InstitutionViewController: BaseViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    lazy var vm = InstitutionViewModel()
+    private lazy var vm = InstitutionViewModel()
+    
+    func setup(documentID: String?, name: String, hue: Float) {
+        vm.documentID = documentID
+        vm.name = name
+        vm.hue = hue
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

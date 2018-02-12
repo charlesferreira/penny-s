@@ -15,7 +15,13 @@ class ProductViewController: BaseViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    lazy var vm = ProductViewModel()
+    private lazy var vm = ProductViewModel()
+    
+    func setup(documentID: String?, name: String, note: String) {
+        vm.documentID = documentID
+        vm.name = name
+        vm.note = note
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
