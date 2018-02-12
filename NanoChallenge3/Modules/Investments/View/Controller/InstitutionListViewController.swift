@@ -74,6 +74,10 @@ extension InstitutionListViewController: UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "listProducts", sender: self)
+    }
+    
     // exibe as opções da célula ao swipe pra esquerda
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = contextualEditAction(forRowAtIndexPath: indexPath)

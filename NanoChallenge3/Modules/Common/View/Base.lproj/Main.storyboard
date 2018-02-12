@@ -66,7 +66,7 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-55-NSC">
                                                             <rect key="frame" x="-0.5" y="0.0" width="375" height="60"/>
-                                                            <color key="backgroundColor" red="0.0" green="0.67806078634159705" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.88816938649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,8 +113,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="backgroundTint" destination="MPZ-55-NSC" id="7Pf-JF-maC"/>
                                             <outlet property="nameLabel" destination="qui-1V-6or" id="CdA-fq-v8D"/>
-                                            <outlet property="overlayView" destination="MPZ-55-NSC" id="7Pf-JF-maC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -188,14 +188,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4Y-xA-WLd">
+                                        <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4Y-xA-WLd" userLabel="Background">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eK2-LI-MYo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.88816938649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="eK2-LI-MYo" firstAttribute="centerY" secondItem="s4Y-xA-WLd" secondAttribute="centerY" id="SJs-Wg-z5X"/>
+                                                <constraint firstItem="eK2-LI-MYo" firstAttribute="height" secondItem="s4Y-xA-WLd" secondAttribute="height" id="vBm-mv-b5d"/>
+                                                <constraint firstItem="eK2-LI-MYo" firstAttribute="width" secondItem="s4Y-xA-WLd" secondAttribute="width" id="w2o-bq-PGf"/>
+                                                <constraint firstItem="eK2-LI-MYo" firstAttribute="centerX" secondItem="s4Y-xA-WLd" secondAttribute="centerX" id="wiJ-vT-Imd"/>
+                                            </constraints>
+                                        </view>
+                                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwO-6u-nbX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-pK-2uM">
                                             <rect key="frame" x="20" y="0.0" width="335" height="44"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQW-Eh-5za">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALDO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQW-Eh-5za">
                                                     <rect key="frame" x="0.0" y="0.0" width="258" height="44"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,7 +231,11 @@
                                         <constraint firstItem="fSD-pK-2uM" firstAttribute="centerY" secondItem="6n7-qp-KJ6" secondAttribute="centerY" id="1om-it-6LQ"/>
                                         <constraint firstItem="fSD-pK-2uM" firstAttribute="height" secondItem="6n7-qp-KJ6" secondAttribute="height" id="8gb-Mx-yGk"/>
                                         <constraint firstItem="fSD-pK-2uM" firstAttribute="leading" secondItem="6n7-qp-KJ6" secondAttribute="leading" constant="20" id="Acl-2O-Bgb"/>
+                                        <constraint firstItem="KwO-6u-nbX" firstAttribute="width" secondItem="s4Y-xA-WLd" secondAttribute="width" id="Lww-C3-4Gm"/>
                                         <constraint firstAttribute="trailing" secondItem="fSD-pK-2uM" secondAttribute="trailing" constant="20" id="TU8-06-EBT"/>
+                                        <constraint firstItem="KwO-6u-nbX" firstAttribute="centerX" secondItem="s4Y-xA-WLd" secondAttribute="centerX" id="U9l-8t-4xX"/>
+                                        <constraint firstItem="KwO-6u-nbX" firstAttribute="height" secondItem="s4Y-xA-WLd" secondAttribute="height" id="Yku-1V-cGS"/>
+                                        <constraint firstItem="KwO-6u-nbX" firstAttribute="centerY" secondItem="s4Y-xA-WLd" secondAttribute="centerY" id="ajJ-b6-xal"/>
                                         <constraint firstItem="s4Y-xA-WLd" firstAttribute="height" secondItem="6n7-qp-KJ6" secondAttribute="height" id="exO-zv-jNN"/>
                                         <constraint firstItem="s4Y-xA-WLd" firstAttribute="width" secondItem="6n7-qp-KJ6" secondAttribute="width" id="hgm-tc-LRl"/>
                                         <constraint firstItem="s4Y-xA-WLd" firstAttribute="centerX" secondItem="6n7-qp-KJ6" secondAttribute="centerX" id="mzD-oF-9Es"/>
@@ -291,9 +311,9 @@
                                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjE-KC-D9Y" userLabel="Background">
                                         <rect key="frame" x="-0.5" y="-0.5" width="375" height="613"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4k8-Xh-Xnk" userLabel="Overlay">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4k8-Xh-Xnk">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="613"/>
-                                                <color key="backgroundColor" red="0.0" green="0.54473986710929623" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.88816938649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -411,7 +431,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="jhb-ZH-T9w" id="SEW-2H-MQo"/>
-                        <outlet property="backgroundOverlay" destination="4k8-Xh-Xnk" id="G8P-vd-roR"/>
+                        <outlet property="backgroundTint" destination="4k8-Xh-Xnk" id="G8P-vd-roR"/>
                         <outlet property="huePickerView" destination="jbZ-zg-CQL" id="uC6-yj-qMZ"/>
                         <outlet property="nameField" destination="ld0-5L-TQm" id="Vmp-Un-VnM"/>
                         <outlet property="saveButton" destination="ciE-Vb-yKY" id="W9h-7o-eXH"/>

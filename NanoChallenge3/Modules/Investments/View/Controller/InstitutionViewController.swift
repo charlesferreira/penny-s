@@ -10,7 +10,7 @@ import UIKit
 
 class InstitutionViewController: BaseViewController {
 
-    @IBOutlet weak var backgroundOverlay: UIView!
+    @IBOutlet weak var backgroundTint: UIView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var huePickerView: HueColorPickerView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -49,7 +49,7 @@ class InstitutionViewController: BaseViewController {
     }
     
     private func updateBackgroundColor() {
-        backgroundOverlay.backgroundColor = UIColor(hue: CGFloat(vm.hue), saturation: 1, brightness: 1, alpha: 1)
+        backgroundTint.backgroundColor = UIColor(hue: CGFloat(vm.hue), saturation: 1, brightness: 1, alpha: 1)
     }
     
     private func updateNameField() {
