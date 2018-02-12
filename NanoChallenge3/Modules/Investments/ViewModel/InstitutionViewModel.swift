@@ -6,8 +6,6 @@
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
-import Firebase
-
 final class InstitutionViewModel: ViewModel {
     
     private (set) var institution: Institution
@@ -25,10 +23,10 @@ final class InstitutionViewModel: ViewModel {
         }
     }
     
-    var hue: CGFloat {
-        get { return CGFloat(institution.hue) }
+    var hue: Float {
+        get { return institution.hue }
         set {
-            institution.hue = Float(newValue)
+            institution.hue = newValue
             isDirty = true
         }
     }
@@ -44,7 +42,8 @@ final class InstitutionViewModel: ViewModel {
     func persist() {
         super.persist(data: institution.data, toCollection: "institutions") { error in
             guard error == nil else {
-                fatalError("Erro ao persistir instituição: \(error!)")
+                self.delegate?.viewModelDidNotPersistData?()
+                return
             }
             
             self.delegate?.viewModelDidCreateDocument?()

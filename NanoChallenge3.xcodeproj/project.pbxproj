@@ -18,12 +18,17 @@
 		5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D4212030541A008A59E6 /* DocumentSerializable.swift */; };
 		5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D4262030751F008A59E6 /* HueColorPickerView.swift */; };
 		5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D42820308524008A59E6 /* InstitutionViewController.swift */; };
+		565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056E9203110E6008D3237 /* ProductListViewModel.swift */; };
+		565056EC203113B5008D3237 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056EB203113B5008D3237 /* ProductViewController.swift */; };
+		565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056ED2031140C008D3237 /* ProductViewModel.swift */; };
 		56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C52202E5699005ED1D1 /* AppDelegate.swift */; };
 		56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56610C54202E5699005ED1D1 /* InstitutionListViewController.swift */; };
 		56610C58202E5699005ED1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C56202E5699005ED1D1 /* Main.storyboard */; };
 		56610C5A202E5699005ED1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56610C59202E5699005ED1D1 /* Assets.xcassets */; };
 		56610C5D202E5699005ED1D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56610C5B202E5699005ED1D1 /* LaunchScreen.storyboard */; };
 		569A886C2030AAF200620364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A886B2030AAF200620364 /* BaseViewController.swift */; };
+		569A887020310E5400620364 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A886F20310E5400620364 /* ProductListViewController.swift */; };
+		569A887220310FAD00620364 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A887120310FAD00620364 /* ProductTableViewCell.swift */; };
 		56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */; };
 		56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */; };
 		56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA52030936C006EF3C4 /* ViewModel.swift */; };
@@ -44,6 +49,9 @@
 		5616D4212030541A008A59E6 /* DocumentSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializable.swift; sourceTree = "<group>"; };
 		5616D4262030751F008A59E6 /* HueColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueColorPickerView.swift; sourceTree = "<group>"; };
 		5616D42820308524008A59E6 /* InstitutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionViewController.swift; sourceTree = "<group>"; };
+		565056E9203110E6008D3237 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		565056EB203113B5008D3237 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		565056ED2031140C008D3237 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		56610C4F202E5699005ED1D1 /* NanoChallenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56610C52202E5699005ED1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56610C54202E5699005ED1D1 /* InstitutionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionListViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +60,8 @@
 		56610C5C202E5699005ED1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56610C5E202E5699005ED1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		569A886B2030AAF200620364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		569A886F20310E5400620364 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		569A887120310FAD00620364 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelDelegate.swift; path = NanoChallenge3/Modules/Common/ViewModel/ViewModelDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstitutionViewModel.swift; path = NanoChallenge3/Modules/Investments/ViewModel/InstitutionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA52030936C006EF3C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +107,8 @@
 			children = (
 				5616D41220304A74008A59E6 /* InstitutionListViewModel.swift */,
 				56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */,
+				565056E9203110E6008D3237 /* ProductListViewModel.swift */,
+				565056ED2031140C008D3237 /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -104,9 +116,8 @@
 		5616D41720304ACA008A59E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5616D41D20304BDA008A59E6 /* Cells */,
-				56610C54202E5699005ED1D1 /* InstitutionListViewController.swift */,
-				5616D42820308524008A59E6 /* InstitutionViewController.swift */,
+				569A886E20310E0700620364 /* Controller */,
+				5616D41D20304BDA008A59E6 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,12 +166,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		5616D41D20304BDA008A59E6 /* Cells */ = {
+		5616D41D20304BDA008A59E6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				5616D41E20304BF3008A59E6 /* InstitutionTableViewCell.swift */,
+				569A887120310FAD00620364 /* ProductTableViewCell.swift */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5616D42020305404008A59E6 /* Protocol */ = {
@@ -207,6 +219,17 @@
 				5616D42320306911008A59E6 /* Util */,
 			);
 			path = NanoChallenge3;
+			sourceTree = "<group>";
+		};
+		569A886E20310E0700620364 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56610C54202E5699005ED1D1 /* InstitutionListViewController.swift */,
+				5616D42820308524008A59E6 /* InstitutionViewController.swift */,
+				569A886F20310E5400620364 /* ProductListViewController.swift */,
+				565056EB203113B5008D3237 /* ProductViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		56C2FE9A2030891C006EF3C4 /* Common */ = {
@@ -392,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5616D410202FDE28008A59E6 /* Investment.swift in Sources */,
+				569A887020310E5400620364 /* ProductListViewController.swift in Sources */,
 				5616D40C202FDB66008A59E6 /* Institution.swift in Sources */,
 				56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */,
 				56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */,
@@ -401,11 +425,15 @@
 				569A886C2030AAF200620364 /* BaseViewController.swift in Sources */,
 				5616D41F20304BF3008A59E6 /* InstitutionTableViewCell.swift in Sources */,
 				5616D40E202FDD14008A59E6 /* Product.swift in Sources */,
+				569A887220310FAD00620364 /* ProductTableViewCell.swift in Sources */,
 				5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */,
 				5616D41320304A74008A59E6 /* InstitutionListViewModel.swift in Sources */,
+				565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */,
 				5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */,
 				5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */,
 				56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */,
+				565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */,
+				565056EC203113B5008D3237 /* ProductViewController.swift in Sources */,
 				56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

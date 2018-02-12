@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstitutionListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ViewModelDelegate {
+class InstitutionListViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,11 +33,32 @@ class InstitutionListViewController: UIViewController, UITableViewDelegate, UITa
         tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? InstitutionViewController,
+            editingRowIndexPath != nil else { return }
+        
+        controller.vm.documentID = vm.documentID(forInstitutionAtIndex: editingRowIndexPath!.row)
+        controller.vm.name = vm.name(forInstitutionAtIndex: editingRowIndexPath!.row)
+        controller.vm.hue = vm.hue(forInstitutionAtIndex: editingRowIndexPath!.row)
+        
+        editingRowIndexPath = nil
+    }
+    
+    // método vazio, apenas para criar um unwind segue no storyboard
+    @IBAction func backToInstitutionList(unwind: UIStoryboardSegue) {}
+
+}
+
+extension InstitutionListViewController: ViewModelDelegate {
+    
     func viewModelDidChange() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
+}
+
+extension InstitutionListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vm.numberOfInstitutions
@@ -72,20 +93,5 @@ class InstitutionListViewController: UIViewController, UITableViewDelegate, UITa
         action.backgroundColor = UIColor(hue: CGFloat(hue), saturation: 1, brightness: 0.5, alpha: 1)
         return action
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controller = segue.destination as? InstitutionViewController,
-            editingRowIndexPath != nil else { return }
-        
-        controller.vm.documentID = vm.documentID(forInstitutionAtIndex: editingRowIndexPath!.row)
-        controller.vm.name = vm.name(forInstitutionAtIndex: editingRowIndexPath!.row)
-        controller.vm.hue = CGFloat(vm.hue(forInstitutionAtIndex: editingRowIndexPath!.row))
-        
-        editingRowIndexPath = nil
-    }
-    
-    // método vazio, apenas para criar um unwind segue no storyboard
-    @IBAction func backToInstitutionList(unwind: UIStoryboardSegue) {}
-
 }
 

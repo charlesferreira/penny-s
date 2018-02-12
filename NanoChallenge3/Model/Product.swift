@@ -8,7 +8,27 @@
 
 struct Product {
     
-    let name: String
-    let note: String?
-    let balance: Double
+    var documentID: String?
+    var name: String = ""
+    var note: String = ""
+    var balance: Double = 0.0
+}
+
+extension Product: DocumentSerializable {
+    
+    init?(documentID: String, data: [String : Any]) {
+        guard let name = data["name"] as? String,
+            let note = data["note"] as? String,
+            let balance  = data["balance"] as? Double else { return nil }
+        
+        self.init(documentID: documentID, name: name, note: note, balance: balance)
+    }
+    
+    var data: [String : Any] {
+        return [
+            "name": name,
+            "note": note,
+            "balance": balance
+        ]
+    }
 }

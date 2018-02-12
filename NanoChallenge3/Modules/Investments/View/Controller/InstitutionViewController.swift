@@ -11,7 +11,7 @@ import UIKit
 class InstitutionViewController: BaseViewController {
 
     @IBOutlet weak var backgroundOverlay: UIView!
-    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var huePickerView: HueColorPickerView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -29,17 +29,17 @@ class InstitutionViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nameLabel.becomeFirstResponder()
-        nameLabel.addTarget(self, action: #selector(nameLabelChanged), for: .editingChanged)
+        nameField.becomeFirstResponder()
+        nameField.addTarget(self, action: #selector(nameFieldChanged), for: .editingChanged)
         
         updateNavigationBar()
         updateBackgroundColor()
-        updateNameLabel()
+        updateNameField()
         updateSaveButton()
     }
     
-    @objc func nameLabelChanged() {
-        vm.name = nameLabel.text ?? ""
+    @objc func nameFieldChanged() {
+        vm.name = nameField.text ?? ""
         updateSaveButton()
     }
     
@@ -49,11 +49,11 @@ class InstitutionViewController: BaseViewController {
     }
     
     private func updateBackgroundColor() {
-        backgroundOverlay.backgroundColor = UIColor(hue: vm.hue, saturation: 1, brightness: 1, alpha: 1)
+        backgroundOverlay.backgroundColor = UIColor(hue: CGFloat(vm.hue), saturation: 1, brightness: 1, alpha: 1)
     }
     
-    private func updateNameLabel() {
-        nameLabel.text = vm.name
+    private func updateNameField() {
+        nameField.text = vm.name
     }
     
     private func updateSaveButton() {
@@ -73,7 +73,7 @@ class InstitutionViewController: BaseViewController {
     }
     
     private func fixNamePlaceholderColor() {
-        nameLabel.attributedPlaceholder = NSAttributedString(string: nameLabel.placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1, alpha: 0.25)])
+        nameField.attributedPlaceholder = NSAttributedString(string: nameField.placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1, alpha: 0.25)])
     }
 }
 
@@ -87,7 +87,7 @@ extension InstitutionViewController: ViewModelDelegate {
 extension InstitutionViewController: HueColorPickerDelegate {
     
     func hueColorPickerChanged(sender: HueColorPickerView, hue: CGFloat, point: CGPoint, state: UIGestureRecognizerState) {
-        vm.hue = hue
+        vm.hue = Float(hue)
         updateBackgroundColor()
     }
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
-import Firebase
-
 final class InstitutionListViewModel: ViewModel {
     
     private var institutions: [Institution] = []

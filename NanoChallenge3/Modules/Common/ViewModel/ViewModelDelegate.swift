@@ -14,5 +14,6 @@ import Foundation
     
     @objc optional func viewModelDidCreateDocument()
     
+    @objc optional func viewModelDidNotPersistData()
 }
 
