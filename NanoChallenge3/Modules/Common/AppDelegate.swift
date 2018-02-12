@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func setupTableViewCellStyles() {
         // configura o estilo das células de tabela selecionadas
         let colorView = UIView()
-        colorView.backgroundColor = UIColor(white: 0.2, alpha: 0.8)
+        colorView.backgroundColor = UIColor(white: 0.5, alpha: 0.9)
         UITableViewCell.appearance().selectedBackgroundView = colorView
     }
     

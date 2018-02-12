@@ -15,6 +15,12 @@ final class ProductViewModel: ViewModel {
         set { product.documentID = newValue }
     }
     
+    var institutionID: String {
+        get { return product.institutionID }
+        set { product.institutionID = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+    }
+    
     var name: String {
         get { return product.name }
         set {
@@ -24,7 +30,7 @@ final class ProductViewModel: ViewModel {
     }
     
     var note: String {
-        get { return product.name }
+        get { return product.note }
         set {
             product.note = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
             isDirty = true
@@ -59,9 +65,8 @@ final class ProductViewModel: ViewModel {
     }
     
     func validate() -> Bool {
-        return !name.isEmpty
+        return !institutionID.isEmpty && !name.isEmpty
     }
-    
 }
 
 

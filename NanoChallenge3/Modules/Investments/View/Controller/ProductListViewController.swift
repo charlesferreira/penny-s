@@ -35,7 +35,7 @@ class ProductListViewController: BaseViewController {
         
         // view model
         vm.delegate = self
-        vm.observeProductList()
+        vm.observeProductList(forInstitutionID: institution.documentID!)
         
         updateLayout()
     }
@@ -52,16 +52,22 @@ class ProductListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard subjectCellIndexPath != nil else { return }
+        guard let institutionID = institution.documentID else { return }
         
-        // reúne os dados célula em questão
-        let documentID = vm.documentID(forProductAtIndex: subjectCellIndexPath!.row)
-        let name = vm.name(forProductAtIndex: subjectCellIndexPath!.row)
-        let note = vm.note(forProductAtIndex: subjectCellIndexPath!.row)
-        
-        // prepara para edição do produto
+        // prepara para exibir tela de edição do produto
         if let controller = segue.destination as? ProductViewController {
-            controller.setup(documentID: documentID, name: name, note: note)
+            if subjectCellIndexPath == nil {
+                // novo produto
+                controller.setup(institutionID: institutionID)
+            } else {
+                // produto existente
+                let documentID = vm.documentID(forProductAtIndex: subjectCellIndexPath!.row)
+                let name = vm.name(forProductAtIndex: subjectCellIndexPath!.row)
+                let note = vm.note(forProductAtIndex: subjectCellIndexPath!.row)
+                
+                controller.setup(documentID: documentID, institutionID: institutionID, name: name, note: note)
+            }
+            
         }
         
         subjectCellIndexPath = nil
@@ -91,7 +97,8 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         
         let name = vm.name(forProductAtIndex: indexPath.row)
         let note = vm.note(forProductAtIndex: indexPath.row)
-        cell.setup(name: name, note: note)
+        let balance = vm.balance(forProductAtIndex: indexPath.row)
+        cell.setup(name: name, note: note, balance: balance)
         
         return cell
     }

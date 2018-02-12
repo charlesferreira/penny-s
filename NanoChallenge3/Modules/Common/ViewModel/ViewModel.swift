@@ -23,7 +23,7 @@ class ViewModel {
     
     func persist(data: [String: Any], toCollection path: String, completion: ((Error?) -> Void)?) {
         guard isDirty else { return }
-        
+
         isDirty = false
         
         if let documentID = documentID {

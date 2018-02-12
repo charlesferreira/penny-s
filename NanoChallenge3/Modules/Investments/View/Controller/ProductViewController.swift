@@ -17,7 +17,14 @@ class ProductViewController: BaseViewController {
     
     private lazy var vm = ProductViewModel()
     
-    func setup(documentID: String?, name: String, note: String) {
+    // prepara para criar produto
+    func setup(institutionID: String) {
+        vm.institutionID = institutionID
+    }
+    
+    // prepara para editar produto
+    func setup(documentID: String?, institutionID: String, name: String, note: String) {
+        setup(institutionID: institutionID)
         vm.documentID = documentID
         vm.name = name
         vm.note = note
@@ -29,12 +36,16 @@ class ProductViewController: BaseViewController {
         vm.delegate = self
         
         fixTextFieldsPlaceholderColor()
+        updateNavigationBar()
+        updateTextFields()
+        updateSaveButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nameField.becomeFirstResponder()
         nameField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+        noteField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
         
         updateNavigationBar()
         updateTextFields()

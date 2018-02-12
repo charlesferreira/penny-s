@@ -50,7 +50,7 @@ class InstitutionViewController: BaseViewController {
     }
     
     private func updateNavigationBar() {
-        navigationItem.title = (vm.name.isEmpty ? "Nova" : "Editar") + " instituição"
+        navigationItem.title = (vm.name.isEmpty ? "Nova" : "Editar") + " Instituição"
         saveButton.title = vm.name.isEmpty ? "Criar" : "OK"
     }
     

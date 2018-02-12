@@ -18,6 +18,10 @@ final class ProductListViewModel: ViewModel {
         return products[index].documentID
     }
     
+    func institutionID(forProductAtIndex index: Int) -> String {
+        return products[index].institutionID
+    }
+    
     func name(forProductAtIndex index: Int) -> String {
         return products[index].name
     }
@@ -30,8 +34,9 @@ final class ProductListViewModel: ViewModel {
         return products[index].balance
     }
     
-    func observeProductList() {
-        db.collection("products").order(by: "name").addSnapshotListener { (snapshot, error) in
+    func observeProductList(forInstitutionID institutionID: String) {
+//        db.collection("products").order(by: "name").addSnapshotListener { (snapshot, error) in
+        db.collection("products").whereField("institutionID", isEqualTo: institutionID).addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot, error == nil else {
                 fatalError("Erro ao obter lista de produtos: \(error!)")
             }
