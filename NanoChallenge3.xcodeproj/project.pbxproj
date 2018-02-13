@@ -23,6 +23,8 @@
 		5630E65E2032EFA400D6E2FA /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E65D2032EFA400D6E2FA /* InvestmentTableViewCell.swift */; };
 		5630E6602032EFC100D6E2FA /* InvestmentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E65F2032EFC100D6E2FA /* InvestmentListViewModel.swift */; };
 		5630E6622032F7CD00D6E2FA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E6612032F7CD00D6E2FA /* Date.swift */; };
+		5630E66420330C8B00D6E2FA /* InvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E66320330C8B00D6E2FA /* InvestmentViewController.swift */; };
+		5630E66620330DA000D6E2FA /* InvestmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E66520330DA000D6E2FA /* InvestmentViewModel.swift */; };
 		565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056E9203110E6008D3237 /* ProductListViewModel.swift */; };
 		565056EC203113B5008D3237 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056EB203113B5008D3237 /* ProductViewController.swift */; };
 		565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056ED2031140C008D3237 /* ProductViewModel.swift */; };
@@ -67,6 +69,8 @@
 		5630E65D2032EFA400D6E2FA /* InvestmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentTableViewCell.swift; sourceTree = "<group>"; };
 		5630E65F2032EFC100D6E2FA /* InvestmentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentListViewModel.swift; sourceTree = "<group>"; };
 		5630E6612032F7CD00D6E2FA /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5630E66320330C8B00D6E2FA /* InvestmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentViewController.swift; sourceTree = "<group>"; };
+		5630E66520330DA000D6E2FA /* InvestmentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentViewModel.swift; sourceTree = "<group>"; };
 		565056E9203110E6008D3237 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		565056EB203113B5008D3237 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		565056ED2031140C008D3237 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				565056E9203110E6008D3237 /* ProductListViewModel.swift */,
 				565056ED2031140C008D3237 /* ProductViewModel.swift */,
 				5630E65F2032EFC100D6E2FA /* InvestmentListViewModel.swift */,
+				5630E66520330DA000D6E2FA /* InvestmentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				569A886F20310E5400620364 /* ProductListViewController.swift */,
 				565056EB203113B5008D3237 /* ProductViewController.swift */,
 				5630E65B2032EF6700D6E2FA /* InvestmentListViewController.swift */,
+				5630E66320330C8B00D6E2FA /* InvestmentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				569A887020310E5400620364 /* ProductListViewController.swift in Sources */,
 				5616D40C202FDB66008A59E6 /* Institution.swift in Sources */,
 				56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */,
+				5630E66420330C8B00D6E2FA /* InvestmentViewController.swift in Sources */,
 				56A5DDBC20320700002FBACB /* SavingAccountViewController.swift in Sources */,
 				56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */,
 				5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */,
@@ -531,6 +538,7 @@
 				569A887220310FAD00620364 /* ProductTableViewCell.swift in Sources */,
 				5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */,
 				5616D41320304A74008A59E6 /* InstitutionListViewModel.swift in Sources */,
+				5630E66620330DA000D6E2FA /* InvestmentViewModel.swift in Sources */,
 				56A2859320325C1A00DF327C /* String.swift in Sources */,
 				56A5DDB620320090002FBACB /* SavingAccountListViewController.swift in Sources */,
 				565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */,

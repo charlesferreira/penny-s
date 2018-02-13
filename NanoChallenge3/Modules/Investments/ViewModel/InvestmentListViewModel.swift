@@ -30,7 +30,7 @@ final class InvestmentListViewModel: ViewModel {
     
     func summary(forInvestmentAtIndex index: Int) -> String {
         let investment = investments[index]
-        let summary = [investment.interest, investment.liquidity, investment.dueDate.toString()]
+        let summary: [String] = [investment.interest, investment.liquidity, investment.dueDate.toString()]
         return summary.filter { !$0.isEmpty }.joined(separator: " ")
     }
     

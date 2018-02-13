@@ -11,13 +11,13 @@ import Foundation
 struct Investment {
     
     var documentID: String?
-    var productID: String
-    var purchaseDate: Date
-    var dueDate: Date
-    var interest: String
-    var liquidity: String
-    var initialValue: Double
-    var balance: Double
+    var productID: String = ""
+    var purchaseDate: Date = Date()
+    var dueDate: Date = Date()
+    var interest: String = ""
+    var liquidity: String = ""
+    var initialValue: Double = 0
+    var balance: Double = 0
 }
 
 extension Investment: DocumentSerializable {

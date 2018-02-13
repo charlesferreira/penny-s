@@ -17,8 +17,7 @@ final class ProductViewModel: ViewModel {
     
     var institutionID: String {
         get { return product.institutionID }
-        set { product.institutionID = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
+        set { product.institutionID = newValue.trimmingCharacters(in: .whitespacesAndNewlines) }
     }
     
     var name: String {
