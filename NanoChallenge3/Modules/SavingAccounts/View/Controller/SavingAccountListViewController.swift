@@ -45,7 +45,7 @@ class SavingAccountListViewController: BaseViewController {
         
         // prepara para edição da instituição
         if let controller = segue.destination as? SavingAccountViewController {
-            controller.setup(documentID: documentID, name: name, hue: hue, goal: goal)
+            controller.setup(documentID: documentID, name: name, hue: hue, goal: goal, balance: balance)
         }
             
             // prepara para lista de produtos
