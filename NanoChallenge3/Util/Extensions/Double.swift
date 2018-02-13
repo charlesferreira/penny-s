@@ -10,12 +10,17 @@ import Foundation
 
 extension Double {
     
-    func asCurrency(symbol: String? = nil) -> String {
+    func asCurrency(symbol: String? = nil, zero: String? = nil, limit: Double? = nil) -> String {
+        if zero != nil && self == 0 {
+            return zero!
+        }
+        
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencySymbol = symbol ?? ""
         
-        if let formattedValue = formatter.string(from: self as NSNumber) {
+        let value = limit != nil && self > limit! ? limit! : self
+        if let formattedValue = formatter.string(from: value as NSNumber) {
             return formattedValue
         }
         

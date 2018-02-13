@@ -33,6 +33,8 @@ class ProductViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameField.delegate = self
+        noteField.delegate = self
         vm.delegate = self
         
         fixTextFieldsPlaceholderColor()
@@ -96,4 +98,18 @@ extension ProductViewController: ViewModelDelegate {
     func viewModelDidCreateDocument() {
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension ProductViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameField {
+            noteField.becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+        }
+        
+        return true
+    }
+    
 }

@@ -29,6 +29,8 @@ class SavingAccountViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameField.delegate = self
+        goalField.delegate = self
         huePickerView.delegate = self
         vm.delegate = self
         
@@ -48,8 +50,7 @@ class SavingAccountViewController: BaseViewController {
     
     @objc func textFieldsChanged() {
         vm.name = nameField.text ?? ""
-        // TODO: converter valor do campo de texto para Double
-//        vm.goal = Double(goalField.text ?? "")
+        vm.goal = goalField.text?.numbersToDouble ?? 0
         updateSaveButton()
     }
     
@@ -64,7 +65,7 @@ class SavingAccountViewController: BaseViewController {
     
     private func updateTextFields() {
         nameField.text = vm.name
-        goalField.text = vm.goal > 0 ? vm.goal.asCurrency() : ""
+        goalField.text = vm.goal.asCurrency(symbol: "R$ ", zero: "")
     }
     
     private func updateSaveButton() {
@@ -103,5 +104,36 @@ extension SavingAccountViewController: HueColorPickerDelegate {
         vm.hue = Float(hue)
         updateBackgroundColor()
     }
+}
+
+extension SavingAccountViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard textField == goalField,
+            var text = goalField.text else { return true }
+        
+        // lembrete: não mexer em strings com sono... zzzz
+        if string == "" && !text.isEmpty {
+            let secondToLast = text.index(before: text.endIndex)
+            text = String(text[..<secondToLast])
+        } else {
+            text = (textField.text ?? "") + string
+        }
+        
+        textField.text = text.numbersToDouble.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        textFieldsChanged()
+        
+        return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameField {
+            goalField.becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+        }
+        return true
+    }
+    
 }
 

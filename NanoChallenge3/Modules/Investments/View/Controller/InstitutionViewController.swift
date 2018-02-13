@@ -27,6 +27,7 @@ class InstitutionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nameField.delegate = self
         huePickerView.delegate = self
         vm.delegate = self
         
@@ -96,4 +97,13 @@ extension InstitutionViewController: HueColorPickerDelegate {
         vm.hue = Float(hue)
         updateBackgroundColor()
     }
+}
+
+extension InstitutionViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
 }

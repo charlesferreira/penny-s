@@ -67,6 +67,6 @@ final class SavingAccountViewModel: ViewModel {
     }
     
     func validate() -> Bool {
-        return !name.isEmpty
+        return !name.isEmpty && goal > 0
     }
 }
