@@ -22,8 +22,8 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="PGe-sm-lZ4" kind="relationship" relationship="viewControllers" id="NXq-3Z-voO"/>
                         <segue destination="III-e3-UDC" kind="relationship" relationship="viewControllers" id="be2-pc-GyE"/>
+                        <segue destination="PGe-sm-lZ4" kind="relationship" relationship="viewControllers" id="NXq-3Z-voO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgZ-KI-GvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

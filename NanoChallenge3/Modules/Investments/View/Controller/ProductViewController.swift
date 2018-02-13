@@ -23,11 +23,12 @@ class ProductViewController: BaseViewController {
     }
     
     // prepara para editar produto
-    func setup(documentID: String?, institutionID: String, name: String, note: String) {
+    func setup(documentID: String?, institutionID: String, name: String, note: String, balance: Double) {
         setup(institutionID: institutionID)
         vm.documentID = documentID
         vm.name = name
         vm.note = note
+        vm.balance = balance
     }
     
     override func viewDidLoad() {

@@ -35,7 +35,6 @@ final class ProductListViewModel: ViewModel {
     }
     
     func observeProductList(forInstitutionID institutionID: String) {
-//        db.collection("products").order(by: "name").addSnapshotListener { (snapshot, error) in
         db.collection("products").whereField("institutionID", isEqualTo: institutionID).addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot, error == nil else {
                 fatalError("Erro ao obter lista de produtos: \(error!)")

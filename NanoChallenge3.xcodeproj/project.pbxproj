@@ -19,6 +19,10 @@
 		5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D4212030541A008A59E6 /* DocumentSerializable.swift */; };
 		5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D4262030751F008A59E6 /* HueColorPickerView.swift */; };
 		5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D42820308524008A59E6 /* InstitutionViewController.swift */; };
+		5630E65C2032EF6700D6E2FA /* InvestmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E65B2032EF6700D6E2FA /* InvestmentListViewController.swift */; };
+		5630E65E2032EFA400D6E2FA /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E65D2032EFA400D6E2FA /* InvestmentTableViewCell.swift */; };
+		5630E6602032EFC100D6E2FA /* InvestmentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E65F2032EFC100D6E2FA /* InvestmentListViewModel.swift */; };
+		5630E6622032F7CD00D6E2FA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630E6612032F7CD00D6E2FA /* Date.swift */; };
 		565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056E9203110E6008D3237 /* ProductListViewModel.swift */; };
 		565056EC203113B5008D3237 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056EB203113B5008D3237 /* ProductViewController.swift */; };
 		565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056ED2031140C008D3237 /* ProductViewModel.swift */; };
@@ -59,6 +63,10 @@
 		5616D4212030541A008A59E6 /* DocumentSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSerializable.swift; sourceTree = "<group>"; };
 		5616D4262030751F008A59E6 /* HueColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueColorPickerView.swift; sourceTree = "<group>"; };
 		5616D42820308524008A59E6 /* InstitutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionViewController.swift; sourceTree = "<group>"; };
+		5630E65B2032EF6700D6E2FA /* InvestmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentListViewController.swift; sourceTree = "<group>"; };
+		5630E65D2032EFA400D6E2FA /* InvestmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentTableViewCell.swift; sourceTree = "<group>"; };
+		5630E65F2032EFC100D6E2FA /* InvestmentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentListViewModel.swift; sourceTree = "<group>"; };
+		5630E6612032F7CD00D6E2FA /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		565056E9203110E6008D3237 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		565056EB203113B5008D3237 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		565056ED2031140C008D3237 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				560E286A2031BD6C006C2F82 /* Double.swift */,
+				5630E6612032F7CD00D6E2FA /* Date.swift */,
 				56A2859220325C1A00DF327C /* String.swift */,
 			);
 			path = Extensions;
@@ -136,6 +145,7 @@
 				56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */,
 				565056E9203110E6008D3237 /* ProductListViewModel.swift */,
 				565056ED2031140C008D3237 /* ProductViewModel.swift */,
+				5630E65F2032EFC100D6E2FA /* InvestmentListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +211,7 @@
 			children = (
 				5616D41E20304BF3008A59E6 /* InstitutionTableViewCell.swift */,
 				569A887120310FAD00620364 /* ProductTableViewCell.swift */,
+				5630E65D2032EFA400D6E2FA /* InvestmentTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 				5616D42820308524008A59E6 /* InstitutionViewController.swift */,
 				569A886F20310E5400620364 /* ProductListViewController.swift */,
 				565056EB203113B5008D3237 /* ProductViewController.swift */,
+				5630E65B2032EF6700D6E2FA /* InvestmentListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,8 +330,8 @@
 		56C2FE9A2030891C006EF3C4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				56C2FEA420309360006EF3C4 /* ViewModel */,
 				56C2FE9B20308924006EF3C4 /* View */,
+				56C2FEA420309360006EF3C4 /* ViewModel */,
 				56610C52202E5699005ED1D1 /* AppDelegate.swift */,
 			);
 			path = Common;
@@ -500,7 +512,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				56A5DDBA2032062A002FBACB /* SavingAccountTableViewCell.swift in Sources */,
+				5630E65C2032EF6700D6E2FA /* InvestmentListViewController.swift in Sources */,
 				56A5DDBE2032077C002FBACB /* SavingAccountViewModel.swift in Sources */,
+				5630E6622032F7CD00D6E2FA /* Date.swift in Sources */,
 				56A5DDB8203201A3002FBACB /* SavingAccountListViewModel.swift in Sources */,
 				5616D410202FDE28008A59E6 /* Investment.swift in Sources */,
 				569A887020310E5400620364 /* ProductListViewController.swift in Sources */,
@@ -520,6 +534,7 @@
 				56A2859320325C1A00DF327C /* String.swift in Sources */,
 				56A5DDB620320090002FBACB /* SavingAccountListViewController.swift in Sources */,
 				565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */,
+				5630E65E2032EFA400D6E2FA /* InvestmentTableViewCell.swift in Sources */,
 				5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */,
 				5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */,
 				56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */,
@@ -527,6 +542,7 @@
 				565056EC203113B5008D3237 /* ProductViewController.swift in Sources */,
 				560E286B2031BD6C006C2F82 /* Double.swift in Sources */,
 				56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */,
+				5630E6602032EFC100D6E2FA /* InvestmentListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

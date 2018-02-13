@@ -17,8 +17,6 @@ class ProductListViewController: BaseViewController {
     private lazy var institution = InstitutionViewModel()
     private lazy var vm = ProductListViewModel()
     
-    var subjectCellIndexPath: IndexPath?
-    
     func setup(documentID: String?, name: String, hue: Float, balance: Double) {
         institution.documentID = documentID
         institution.name = name
@@ -52,25 +50,35 @@ class ProductListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let institutionID = institution.documentID else { return }
-        
-        // prepara para exibir tela de edição do produto
-        if let controller = segue.destination as? ProductViewController {
-            if subjectCellIndexPath == nil {
-                // novo produto
-                controller.setup(institutionID: institutionID)
-            } else {
-                // produto existente
-                let documentID = vm.documentID(forProductAtIndex: subjectCellIndexPath!.row)
-                let name = vm.name(forProductAtIndex: subjectCellIndexPath!.row)
-                let note = vm.note(forProductAtIndex: subjectCellIndexPath!.row)
-                
-                controller.setup(documentID: documentID, institutionID: institutionID, name: name, note: note)
-            }
-            
+        if let indexPath = sender as? IndexPath {
+            prepareSegue(to: segue.destination, forCellAtIndexPath: indexPath)
+            return
         }
         
-        subjectCellIndexPath = nil
+        // novo produto para instituição
+        if let controller = segue.destination as? ProductViewController {
+            controller.setup(institutionID: institution.documentID!)
+        }
+    }
+    
+    private func prepareSegue(to destination: UIViewController, forCellAtIndexPath indexPath : IndexPath) {
+        let institutionID = institution.documentID!
+        let documentID = vm.documentID(forProductAtIndex: indexPath.row)
+        let name = vm.name(forProductAtIndex: indexPath.row)
+        let balance = vm.balance(forProductAtIndex: indexPath.row)
+  
+        // editar produto
+        if let controller = destination as? ProductViewController {
+            let note = vm.note(forProductAtIndex: indexPath.row)
+            controller.setup(documentID: documentID, institutionID: institutionID, name: name, note: note, balance: balance)
+            return
+        }
+        
+        // listar investimentos no produto
+        if let controller = destination as? InvestmentListViewController {
+            let hue = institution.hue
+            controller.setup(productID: documentID, name: name, hue: hue, balance: balance)
+        }
     }
     
     // cria um unwind segue no storyboard (método intencionalmente vazio)
@@ -103,6 +111,11 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
+    // lista os investimentos no produto selecionado
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "listInvestments", sender: indexPath)
+    }
+    
     // exibe as opções da célula ao swipe pra esquerda
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = contextualEditAction(forRowAtIndexPath: indexPath)
@@ -113,8 +126,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     // ação de edicão da célula
     func contextualEditAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
-            self.subjectCellIndexPath = indexPath
-            self.performSegue(withIdentifier: "editProduct", sender: self)
+            self.performSegue(withIdentifier: "editProduct", sender: indexPath)
         }
         
 //        action.image = UIImage(named: "icon-settings")
