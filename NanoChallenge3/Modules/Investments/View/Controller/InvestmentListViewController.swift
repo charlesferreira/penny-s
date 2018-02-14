@@ -14,16 +14,14 @@ class InvestmentListViewController: BaseViewController {
     @IBOutlet weak var balanceBackgroundTint: UIView!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    private lazy var product = ProductViewModel()
+    private lazy var productVM = ProductViewModel()
     private lazy var vm = InvestmentListViewModel()
     
     private var institutionName: String!
     private var hue: CGFloat!
     
-    func setup(productID: String?, name: String, hue: Float, balance: Double) {
-        product.documentID = productID
-        product.name = name
-        product.balance = balance
+    func setup(productVM: ProductViewModel, hue: Float) {
+        self.productVM = productVM
         self.hue = CGFloat(hue)
     }
     
@@ -36,16 +34,16 @@ class InvestmentListViewController: BaseViewController {
         
         // view model
         vm.delegate = self
-        vm.observeInvestmentList(forProductID: product.documentID!)
+        vm.observeCollection(forProductID: productVM.documentID!)
         
         updateLayout()
     }
     
     private func updateLayout() {
-        navigationItem.title = product.name
+        navigationItem.title = productVM.name
         navigationItem.backBarButtonItem?.title = institutionName
         balanceBackgroundTint.backgroundColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 1)
-        balanceLabel.text = product.balance.asCurrency(symbol: "R$ ")
+        balanceLabel.text = productVM.balance.asCurrency(symbol: "R$ ")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,22 +52,29 @@ class InvestmentListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let institutionID = institution.documentID else { return }
+        if let indexPath = sender as? IndexPath {
+            prepareSegue(to: segue.destination, forCellAtIndexPath: indexPath)
+            return
+        }
         
-        // prepara para exibir tela de edição do produto
-//        if let controller = segue.destination as? InvestmentViewController {
-//            if subjectCellIndexPath == nil {
-//                // novo produto
-//                controller.setup(institutionID: institutionID)
-//            } else {
-//                // produto existente
-//                let documentID = vm.documentID(forInvestmentAtIndex: subjectCellIndexPath!.row)
-//                let name = vm.name(forInvestmentAtIndex: subjectCellIndexPath!.row)
-//                let note = vm.note(forInvestmentAtIndex: subjectCellIndexPath!.row)
-//
-//                controller.setup(documentID: documentID, institutionID: institutionID, name: name, note: note)
-//            }
-//            
+        // novo investimento no produto
+        if let navigationController = segue.destination as? UINavigationController,
+            let controller = navigationController.topViewController as? InvestmentViewController {
+            controller.setup(productID: productVM.documentID!)
+        }
+    }
+    
+    private func prepareSegue(to destination: UIViewController, forCellAtIndexPath indexPath : IndexPath) {
+        // editar investimento
+        if let navigationController = destination as? UINavigationController,
+            let controller = navigationController.topViewController as? InvestmentViewController {
+            controller.setup(viewModel: vm[indexPath.row])
+            return
+        }
+        
+        // listar histórico do investimento
+//        if let controller = destination as? InvestmentEntriesViewController {
+//            controller.setup(viewModel: vm[indexPath.row])
 //        }
     }
     
@@ -89,16 +94,13 @@ extension InvestmentListViewController: ViewModelDelegate {
 extension InvestmentListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.numberOfInvestments
+        return vm.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvestmentTableViewCell") as! InvestmentTableViewCell
         
-        let purchaseDate = vm.purchaseDate(forInvestmentAtIndex: indexPath.row)
-        let summary = vm.summary(forInvestmentAtIndex: indexPath.row)
-        let balance = vm.balance(forInvestmentAtIndex: indexPath.row)
-        cell.setup(purchaseDate: purchaseDate, summary: summary, balance: balance)
+        cell.setup(viewModel: vm[indexPath.row])
         
         return cell
     }

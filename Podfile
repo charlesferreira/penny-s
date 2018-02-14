@@ -8,5 +8,6 @@ target 'NanoChallenge3' do
   # Pods for NanoChallenge3
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'IQKeyboardManagerSwift', '~> 5.0'
 
 end

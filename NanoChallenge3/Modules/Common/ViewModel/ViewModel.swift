@@ -22,7 +22,10 @@ class ViewModel {
     }
     
     func persist(data: [String: Any], toCollection path: String, completion: ((Error?) -> Void)?) {
-        guard isDirty else { return }
+        guard isDirty else {
+            completion?(nil)
+            return
+        }
 
         isDirty = false
         

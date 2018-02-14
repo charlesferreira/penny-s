@@ -30,7 +30,7 @@ class ProductListViewController: BaseViewController {
         
         // view model
         vm.delegate = self
-        vm.observeProductList(forInstitutionID: institution.documentID!)
+        vm.observeCollection(forInstitutionID: institution.documentID!)
         
         updateLayout()
     }
@@ -59,22 +59,16 @@ class ProductListViewController: BaseViewController {
     }
     
     private func prepareSegue(to destination: UIViewController, forCellAtIndexPath indexPath : IndexPath) {
-        let institutionID = institution.documentID!
-        let documentID = vm.documentID(forProductAtIndex: indexPath.row)
-        let name = vm.name(forProductAtIndex: indexPath.row)
-        let balance = vm.balance(forProductAtIndex: indexPath.row)
-  
         // editar produto
         if let controller = destination as? ProductViewController {
-            let note = vm.note(forProductAtIndex: indexPath.row)
-            controller.setup(documentID: documentID, institutionID: institutionID, name: name, note: note, balance: balance)
+            controller.setup(viewModel: vm[indexPath.row])
             return
         }
         
         // listar investimentos no produto
         if let controller = destination as? InvestmentListViewController {
             let hue = institution.hue
-            controller.setup(productID: documentID, name: name, hue: hue, balance: balance)
+            controller.setup(productVM: vm[indexPath.row], hue: hue)
         }
     }
     
@@ -94,16 +88,13 @@ extension ProductListViewController: ViewModelDelegate {
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.numberOfProducts
+        return vm.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell") as! ProductTableViewCell
         
-        let name = vm.name(forProductAtIndex: indexPath.row)
-        let note = vm.note(forProductAtIndex: indexPath.row)
-        let balance = vm.balance(forProductAtIndex: indexPath.row)
-        cell.setup(name: name, note: note, balance: balance)
+        cell.setup(viewModel: vm[indexPath.row])
         
         return cell
     }

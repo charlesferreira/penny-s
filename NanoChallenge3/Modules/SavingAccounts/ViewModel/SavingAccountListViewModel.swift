@@ -8,14 +8,14 @@
 
 final class SavingAccountListViewModel: ViewModel {
     
-    private var vms: [SavingAccountViewModel] = []
+    private var accounts: [SavingAccountViewModel] = []
     
     subscript(i: Int) -> SavingAccountViewModel {
-        return vms[i]
+        return accounts[i]
     }
     
     var count: Int {
-        return vms.count
+        return accounts.count
     }
     
     func observeCollection() {
@@ -24,7 +24,7 @@ final class SavingAccountListViewModel: ViewModel {
                 fatalError("Erro ao obter lista de reservas: \(error!)")
             }
             
-            self.vms = snapshot.documents.flatMap {
+            self.accounts = snapshot.documents.flatMap {
                 SavingAccountViewModel(documentID: $0.documentID, data: $0.data())
             }
             self.delegate?.viewModelDidChange?()

@@ -47,6 +47,7 @@
 		56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */; };
 		56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */; };
 		56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA52030936C006EF3C4 /* ViewModel.swift */; };
+		56D056AA2033F71500E8286A /* AllocateIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D056A92033F71500E8286A /* AllocateIncomeViewController.swift */; };
 		8EE172D94CDCD24AC3F3CF2C /* Pods_NanoChallenge3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelDelegate.swift; path = NanoChallenge3/Modules/Common/ViewModel/ViewModelDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstitutionViewModel.swift; path = NanoChallenge3/Modules/Investments/ViewModel/InstitutionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA52030936C006EF3C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		56D056A92033F71500E8286A /* AllocateIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllocateIncomeViewController.swift; sourceTree = "<group>"; };
 		B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -277,6 +279,7 @@
 				565056EB203113B5008D3237 /* ProductViewController.swift */,
 				5630E65B2032EF6700D6E2FA /* InvestmentListViewController.swift */,
 				5630E66320330C8B00D6E2FA /* InvestmentViewController.swift */,
+				56D056A92033F71500E8286A /* AllocateIncomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -497,6 +501,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -531,6 +536,7 @@
 				56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */,
 				5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */,
 				5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */,
+				56D056AA2033F71500E8286A /* AllocateIncomeViewController.swift in Sources */,
 				56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */,
 				569A886C2030AAF200620364 /* BaseViewController.swift in Sources */,
 				5616D41F20304BF3008A59E6 /* InstitutionTableViewCell.swift in Sources */,
@@ -694,6 +700,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.charlesferreira.Penny-s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

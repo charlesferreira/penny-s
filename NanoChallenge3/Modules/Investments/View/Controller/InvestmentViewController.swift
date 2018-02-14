@@ -15,8 +15,10 @@ class InvestmentViewController: BaseViewController {
     @IBOutlet weak var interestField: UITextField!
     @IBOutlet weak var liquidityField: UITextField!
     @IBOutlet weak var initialValueField: UITextField!
+    @IBOutlet weak var initialValueContainer: UIView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var navBarItem: UINavigationItem!
     
     private lazy var vm = InvestmentViewModel()
     
@@ -26,22 +28,8 @@ class InvestmentViewController: BaseViewController {
     }
     
     // prepara para editar um investimento
-    func setup(documentID: String?,
-               productID: String,
-               purchaseDate: Date,
-               dueDate: Date,
-               interest: String,
-               liquidity: String,
-               initialValue: Double,
-               balance: Double) {
-        setup(productID: productID)
-        vm.documentID = documentID
-        vm.purchaseDate = purchaseDate
-        vm.dueDate = dueDate
-        vm.interest = interest
-        vm.liquidity = liquidity
-        vm.initialValue = initialValue
-        vm.balance = balance
+    func setup(viewModel vm: InvestmentViewModel) {
+        self.vm = vm
     }
     
     override func viewDidLoad() {
@@ -58,6 +46,10 @@ class InvestmentViewController: BaseViewController {
         interestField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
         liquidityField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
         initialValueField.addTarget(self, action: #selector(textFieldsChanged), for: .editingChanged)
+        
+        // date pickers
+        purchaseDate.addTarget(self, action: #selector(datePickersChanged), for: .valueChanged)
+        dueDate.addTarget(self, action: #selector(datePickersChanged), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,13 +66,23 @@ class InvestmentViewController: BaseViewController {
     @objc func textFieldsChanged() {
         vm.interest = interestField.text ?? ""
         vm.liquidity = liquidityField.text ?? ""
-        vm.initialValue = (initialValueField.text ?? "").numbersToDouble
+        
+        if initialValueField.isEnabled {
+            vm.initialValue = (initialValueField.text ?? "").numbersToDouble
+        }
+        
+        updateSaveButton()
+    }
+    
+    @objc func datePickersChanged(sender: UIDatePicker) {
+        vm.purchaseDate = purchaseDate.date
+        vm.dueDate = dueDate.date
         updateSaveButton()
     }
     
     private func updateNavigationBar() {
         let isNew = (vm.documentID ?? "").isEmpty
-        navigationItem.title = (isNew ? "Novo" : "Editar") + " investimento"
+        navigationItem.title = (isNew ? "Novo" : "Editar") + " Investimento"
         saveButton.title = isNew ? "Seguinte" : "OK"
     }
     
@@ -93,6 +95,12 @@ class InvestmentViewController: BaseViewController {
         interestField.text = vm.interest
         liquidityField.text = vm.liquidity
         initialValueField.text = vm.initialValue.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        
+        if vm.documentID != nil {
+            initialValueField.isEnabled = false
+            initialValueContainer.isHidden = true
+            liquidityField.returnKeyType = .done
+        }
     }
     
     private func updateSaveButton() {
@@ -100,8 +108,15 @@ class InvestmentViewController: BaseViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        disableUserInteraction()
-        vm.persist()
+        // editando, apenas persiste
+        if vm.documentID != nil {
+            disableUserInteraction()
+            vm.persist()
+            return
+        }
+        
+        // criando, precisa destinar valor inicial para reservas
+        performSegue(withIdentifier: "allocateInvestment", sender: nil)
     }
     
     private func disableUserInteraction() {
@@ -109,6 +124,13 @@ class InvestmentViewController: BaseViewController {
         saveButton.isEnabled = false
         view.endEditing(true)
         activityIndicator.startAnimating()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? AllocateIncomeViewController {
+            controller.setup(viewModel: vm)
+            return
+        }
     }
     
     private func fixTextFieldsPlaceholderColor() {
@@ -146,11 +168,13 @@ extension InvestmentViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case interestField:
+        switch (textField, initialValueField.isEnabled) {
+        case (interestField, _):
             liquidityField.becomeFirstResponder()
-        case liquidityField:
+        case (liquidityField, true):
             initialValueField.becomeFirstResponder()
+        case (liquidityField, false):
+            fallthrough
         default:
             view.endEditing(true)
         }

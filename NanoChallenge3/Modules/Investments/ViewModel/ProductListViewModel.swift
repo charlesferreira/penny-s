@@ -8,43 +8,25 @@
 
 final class ProductListViewModel: ViewModel {
     
-    private var products: [Product] = []
+    private var products: [ProductViewModel] = []
     
-    var numberOfProducts: Int {
+    subscript(i: Int) -> ProductViewModel {
+        return products[i]
+    }
+    
+    var count: Int {
         return products.count
     }
     
-    func viewModel(forProductAtIndex index: Int) -> ProductViewModel {
-        return ProductViewModel(product: products[index])
-    }
-    
-    func documentID(forProductAtIndex index: Int) -> String? {
-        return products[index].documentID
-    }
-    
-    func institutionID(forProductAtIndex index: Int) -> String {
-        return products[index].institutionID
-    }
-    
-    func name(forProductAtIndex index: Int) -> String {
-        return products[index].name
-    }
-    
-    func note(forProductAtIndex index: Int) -> String {
-        return products[index].note
-    }
-    
-    func balance(forProductAtIndex index: Int) -> Double {
-        return products[index].balance
-    }
-    
-    func observeProductList(forInstitutionID institutionID: String) {
+    func observeCollection(forInstitutionID institutionID: String) {
         db.collection("products").whereField("institutionID", isEqualTo: institutionID).addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot, error == nil else {
                 fatalError("Erro ao obter lista de produtos: \(error!)")
             }
             
-            self.products = snapshot.documents.flatMap { Product(documentID: $0.documentID, data: $0.data()) }
+            self.products = snapshot.documents.flatMap {
+                ProductViewModel(documentID: $0.documentID, data: $0.data())
+            }
             self.delegate?.viewModelDidChange?()
         }
     }

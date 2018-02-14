@@ -16,6 +16,7 @@ class SavingAccountViewController: BaseViewController {
     @IBOutlet weak var huePickerView: HueColorPickerView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var navBarItem: UINavigationItem!
     
     private lazy var vm = SavingAccountViewModel()
     
@@ -52,7 +53,7 @@ class SavingAccountViewController: BaseViewController {
     }
     
     private func updateNavigationBar() {
-        navigationItem.title = (vm.name.isEmpty ? "Nova" : "Editar") + " Reserva"
+        navBarItem.title = (vm.name.isEmpty ? "Nova" : "Editar") + " Reserva"
         saveButton.title = vm.name.isEmpty ? "Criar" : "OK"
     }
     

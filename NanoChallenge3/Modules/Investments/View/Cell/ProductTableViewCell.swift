@@ -14,12 +14,12 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    func setup(name: String, note: String, balance: Double) {
-        nameLabel.text = name
-        noteLabel.text = note
-        balanceLabel.text = balance.asCurrency()
+    func setup(viewModel vm: ProductViewModel) {
+        nameLabel.text = vm.name
+        noteLabel.text = vm.note
+        balanceLabel.text = vm.balance.asCurrency()
         
-        noteLabel.isHidden = note.isEmpty
+        noteLabel.isHidden = vm.note.isEmpty
     }
     
 }

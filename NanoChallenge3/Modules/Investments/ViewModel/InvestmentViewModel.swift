@@ -12,6 +12,10 @@ final class InvestmentViewModel: ViewModel {
     
     private var investment: Investment
     
+    var data: [String: Any] {
+        return investment.data
+    }
+    
     override var documentID: String? {
         get { return investment.documentID }
         set { investment.documentID = newValue }
@@ -58,6 +62,9 @@ final class InvestmentViewModel: ViewModel {
         get { return investment.initialValue }
         set {
             investment.initialValue = newValue
+            if documentID == nil {
+                balance = newValue
+            }
             isDirty = true
         }
     }
@@ -70,6 +77,14 @@ final class InvestmentViewModel: ViewModel {
         }
     }
     
+    var summary: String {
+        return [interest, liquidity, dueDate.toString()].filter { !$0.isEmpty }.joined(separator: " ")
+    }
+    
+    convenience init(documentID: String, data: [String: Any]) {
+        self.init(investment: Investment(documentID: documentID, data: data)!)
+    }
+    
     convenience override init() {
         self.init(investment: Investment())
     }
@@ -79,11 +94,16 @@ final class InvestmentViewModel: ViewModel {
     }
     
     func persist() {
+        print("ID: " + (investment.documentID ?? "nil"))
+        print(investment.data)
         super.persist(data: investment.data, toCollection: "investments") { error in
             guard error == nil else {
+                print("erro")
                 self.delegate?.viewModelDidNotPersistData?()
                 return
             }
+            
+            print("ok")
             
             self.delegate?.viewModelDidCreateDocument?()
         }

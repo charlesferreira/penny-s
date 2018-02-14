@@ -44,6 +44,10 @@ final class ProductViewModel: ViewModel {
         }
     }
     
+    convenience init(documentID: String, data: [String: Any]) {
+        self.init(product: Product(documentID: documentID, data: data)!)
+    }
+    
     convenience override init() {
         self.init(product: Product())
     }

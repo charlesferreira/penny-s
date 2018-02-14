@@ -14,12 +14,12 @@ class InvestmentTableViewCell: UITableViewCell {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    func setup(purchaseDate: String, summary: String, balance: Double) {
-        purchaseDateLabel.text = purchaseDate
-        summaryLabel.text = summary
-        balanceLabel.text = balance.asCurrency()
+    func setup(viewModel vm: InvestmentViewModel) {
+        purchaseDateLabel.text = vm.purchaseDate.toString()
+        summaryLabel.text = vm.summary
+        balanceLabel.text = vm.balance.asCurrency()
         
-        summaryLabel.isHidden = summary.isEmpty
+        summaryLabel.isHidden = vm.summary.isEmpty
     }
     
 }

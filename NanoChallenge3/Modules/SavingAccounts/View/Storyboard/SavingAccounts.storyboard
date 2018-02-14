@@ -564,6 +564,7 @@
                         <outlet property="goalField" destination="O50-bI-nf9" id="o7Z-AL-Cy6"/>
                         <outlet property="huePickerView" destination="jbZ-zg-CQL" id="uC6-yj-qMZ"/>
                         <outlet property="nameField" destination="ld0-5L-TQm" id="Vmp-Un-VnM"/>
+                        <outlet property="navBarItem" destination="aYp-32-cjF" id="4MG-Vj-TE9"/>
                         <outlet property="saveButton" destination="ciE-Vb-yKY" id="W9h-7o-eXH"/>
                     </connections>
                 </viewController>

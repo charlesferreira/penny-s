@@ -14,6 +14,7 @@ class ProductViewController: BaseViewController {
     @IBOutlet weak var noteField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var navBarItem: UINavigationItem!
     
     private lazy var vm = ProductViewModel()
     
@@ -23,12 +24,8 @@ class ProductViewController: BaseViewController {
     }
     
     // prepara para editar produto
-    func setup(documentID: String?, institutionID: String, name: String, note: String, balance: Double) {
-        setup(institutionID: institutionID)
-        vm.documentID = documentID
-        vm.name = name
-        vm.note = note
-        vm.balance = balance
+    func setup(viewModel vm: ProductViewModel) {
+        self.vm = vm
     }
     
     override func viewDidLoad() {
@@ -62,7 +59,7 @@ class ProductViewController: BaseViewController {
     }
     
     private func updateNavigationBar() {
-        navigationItem.title = (vm.name.isEmpty ? "Nova" : "Editar") + " instituição"
+        navBarItem.title = (vm.name.isEmpty ? "Novo" : "Editar") + " Produto"
         saveButton.title = vm.name.isEmpty ? "Criar" : "OK"
     }
     
