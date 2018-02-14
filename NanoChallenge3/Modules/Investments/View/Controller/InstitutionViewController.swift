@@ -18,10 +18,8 @@ class InstitutionViewController: BaseViewController {
     
     private lazy var vm = InstitutionViewModel()
     
-    func setup(documentID: String?, name: String, hue: Float) {
-        vm.documentID = documentID
-        vm.name = name
-        vm.hue = hue
+    func setup(viewModel vm: InstitutionViewModel) {
+        self.vm = vm
     }
     
     override func viewDidLoad() {

@@ -8,7 +8,7 @@
 
 final class SavingAccountViewModel: ViewModel {
     
-    private (set) var savingAccount: SavingAccount
+    private var savingAccount: SavingAccount
     
     override var documentID: String? {
         get { return savingAccount.documentID }
@@ -45,6 +45,10 @@ final class SavingAccountViewModel: ViewModel {
             savingAccount.balance = newValue
             isDirty = true
         }
+    }
+    
+    convenience init(documentID: String, data: [String: Any]) {
+        self.init(savingAccount: SavingAccount(documentID: documentID, data: data)!)
     }
     
     convenience override init() {

@@ -14,6 +14,10 @@ final class InstitutionListViewModel: ViewModel {
         return institutions.count
     }
     
+    func viewModel(forInstitutionAtIndex index: Int) -> InstitutionViewModel {
+        return InstitutionViewModel(institution: institutions[index])
+    }
+    
     func documentID(forInstitutionAtIndex index: Int) -> String? {
         return institutions[index].documentID
     }

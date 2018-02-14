@@ -14,8 +14,6 @@ class SavingAccountListViewController: BaseViewController {
     
     private lazy var vm = SavingAccountListViewModel()
     
-    var subjectCellIndexPath: IndexPath?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +23,7 @@ class SavingAccountListViewController: BaseViewController {
         
         // view model
         vm.delegate = self
-        vm.observeSavingAccountList()
+        vm.observeCollection()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,26 +32,18 @@ class SavingAccountListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard subjectCellIndexPath != nil else { return }
+        guard let subjectCellIndexPath = sender as? IndexPath else { return }
         
-        // reúne os dados célula em questão
-        let documentID = vm.documentID(forSavingAccountAtIndex: subjectCellIndexPath!.row)
-        let name = vm.name(forSavingAccountAtIndex: subjectCellIndexPath!.row)
-        let hue = vm.hue(forSavingAccountAtIndex: subjectCellIndexPath!.row)
-        let goal = vm.goal(forSavingAccountAtIndex: subjectCellIndexPath!.row)
-        let balance = vm.balance(forSavingAccountAtIndex: subjectCellIndexPath!.row)
+        let savingAccountVM = vm[subjectCellIndexPath.row]
         
-        // prepara para edição da instituição
         if let controller = segue.destination as? SavingAccountViewController {
-            controller.setup(documentID: documentID, name: name, hue: hue, goal: goal, balance: balance)
+            controller.setup(viewModel: savingAccountVM)
         }
             
-            // prepara para lista de produtos
-        else if let controller = segue.destination as? ProductListViewController {
-            controller.setup(documentID: documentID, name: name, hue: hue, balance: balance)
-        }
-        
-        subjectCellIndexPath = nil
+//            // prepara para lista de produtos
+//        else if let controller = segue.destination as? ProductListViewController {
+//            controller.setup(documentID: documentID, name: name, hue: hue, balance: balance)
+//        }
     }
     
     // cria um unwind segue no storyboard (método intencionalmente vazio)
@@ -72,25 +62,20 @@ extension SavingAccountListViewController: ViewModelDelegate {
 extension SavingAccountListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.numberOfSavingAccounts
+        return vm.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavingAccountTableViewCell") as! SavingAccountTableViewCell
         
-        let name = vm.name(forSavingAccountAtIndex: indexPath.row)
-        let hue = vm.hue(forSavingAccountAtIndex: indexPath.row)
-        let goal = vm.goal(forSavingAccountAtIndex: indexPath.row)
-        let balance = vm.balance(forSavingAccountAtIndex: indexPath.row)
-        cell.setup(name: name, hue: CGFloat(hue), goal: goal, balance: balance)
+        cell.setup(viewModel: vm[indexPath.row])
         
         return cell
     }
     
     // lista os produtos da instituição selecionada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        subjectCellIndexPath = indexPath
-        performSegue(withIdentifier: "listProducts", sender: self)
+        performSegue(withIdentifier: "listProducts", sender: indexPath)
     }
     
     // exibe as opções da célula ao swipe pra esquerda
@@ -103,12 +88,10 @@ extension SavingAccountListViewController: UITableViewDelegate, UITableViewDataS
     // ação de edicão da célula
     func contextualEditAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
-            self.subjectCellIndexPath = indexPath
-            self.performSegue(withIdentifier: "editSavingAccount", sender: self)
+            self.performSegue(withIdentifier: "editSavingAccount", sender: indexPath)
         }
         
-        let hue = vm.hue(forSavingAccountAtIndex: indexPath.row)
-//        action.image = UIImage(named: "icon-settings")
+        let hue = vm[indexPath.row].hue
         action.backgroundColor = UIColor(hue: CGFloat(hue), saturation: 1, brightness: 0.5, alpha: 1)
         return action
     }

@@ -8,7 +8,7 @@
 
 final class InstitutionViewModel: ViewModel {
     
-    private (set) var institution: Institution
+    private var institution: Institution
     
     override var documentID: String? {
         get { return institution.documentID }

@@ -14,8 +14,6 @@ class InstitutionListViewController: BaseViewController {
     
     private lazy var vm = InstitutionListViewModel()
     
-    var subjectCellIndexPath: IndexPath?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -34,25 +32,19 @@ class InstitutionListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard subjectCellIndexPath != nil else { return }
+        guard let subjectCellIndexPath = sender as? IndexPath else { return }
         
-        // reúne os dados célula em questão
-        let documentID = vm.documentID(forInstitutionAtIndex: subjectCellIndexPath!.row)
-        let name = vm.name(forInstitutionAtIndex: subjectCellIndexPath!.row)
-        let hue = vm.hue(forInstitutionAtIndex: subjectCellIndexPath!.row)
-        let balance = vm.balance(forInstitutionAtIndex: subjectCellIndexPath!.row)
+        let institutionVM = vm.viewModel(forInstitutionAtIndex: subjectCellIndexPath.row)
         
         // prepara para edição da instituição
         if let controller = segue.destination as? InstitutionViewController {
-            controller.setup(documentID: documentID, name: name, hue: hue)
+            controller.setup(viewModel: institutionVM)
         }
             
         // prepara para lista de produtos
         else if let controller = segue.destination as? ProductListViewController {
-            controller.setup(documentID: documentID, name: name, hue: hue, balance: balance)
+            controller.setup(viewModel: institutionVM)
         }
-        
-        subjectCellIndexPath = nil
     }
     
     // cria um unwind segue no storyboard (método intencionalmente vazio)
@@ -86,8 +78,7 @@ extension InstitutionListViewController: UITableViewDelegate, UITableViewDataSou
     
     // lista os produtos da instituição selecionada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        subjectCellIndexPath = indexPath
-        performSegue(withIdentifier: "listProducts", sender: self)
+        performSegue(withIdentifier: "listProducts", sender: indexPath)
     }
     
     // exibe as opções da célula ao swipe pra esquerda
@@ -100,12 +91,10 @@ extension InstitutionListViewController: UITableViewDelegate, UITableViewDataSou
     // ação de edicão da célula
     func contextualEditAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
-            self.subjectCellIndexPath = indexPath
-            self.performSegue(withIdentifier: "editInstitution", sender: self)
+            self.performSegue(withIdentifier: "editInstitution", sender: indexPath)
         }
         
         let hue = vm.hue(forInstitutionAtIndex: indexPath.row)
-//        action.image = UIImage(named: "icon-settings")
         action.backgroundColor = UIColor(hue: CGFloat(hue), saturation: 1, brightness: 0.5, alpha: 1)
         return action
     }

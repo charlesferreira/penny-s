@@ -8,42 +8,27 @@
 
 final class SavingAccountListViewModel: ViewModel {
     
-    private var savingAccounts: [SavingAccount] = []
+    private var vms: [SavingAccountViewModel] = []
     
-    var numberOfSavingAccounts: Int {
-        return savingAccounts.count
+    subscript(i: Int) -> SavingAccountViewModel {
+        return vms[i]
     }
     
-    func documentID(forSavingAccountAtIndex index: Int) -> String? {
-        return savingAccounts[index].documentID
+    var count: Int {
+        return vms.count
     }
     
-    func name(forSavingAccountAtIndex index: Int) -> String {
-        return savingAccounts[index].name
-    }
-    
-    func hue(forSavingAccountAtIndex index: Int) -> Float {
-        return savingAccounts[index].hue
-    }
-    
-    func goal(forSavingAccountAtIndex index: Int) -> Double {
-        return savingAccounts[index].goal
-    }
-    
-    func balance(forSavingAccountAtIndex index: Int) -> Double {
-        return savingAccounts[index].balance
-    }
-    
-    func observeSavingAccountList() {
+    func observeCollection() {
         db.collection("saving-accounts").order(by: "name").addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot, error == nil else {
                 fatalError("Erro ao obter lista de reservas: \(error!)")
             }
             
-            self.savingAccounts = snapshot.documents.flatMap { SavingAccount(documentID: $0.documentID, data: $0.data()) }
+            self.vms = snapshot.documents.flatMap {
+                SavingAccountViewModel(documentID: $0.documentID, data: $0.data())
+            }
             self.delegate?.viewModelDidChange?()
         }
     }
-    
 }
 

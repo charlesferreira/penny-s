@@ -19,12 +19,8 @@ class SavingAccountViewController: BaseViewController {
     
     private lazy var vm = SavingAccountViewModel()
     
-    func setup(documentID: String?, name: String, hue: Float, goal: Double, balance: Double) {
-        vm.documentID = documentID
-        vm.name = name
-        vm.hue = hue
-        vm.goal = goal
-        vm.balance = balance
+    func setup(viewModel vm: SavingAccountViewModel) {
+        self.vm = vm
     }
     
     override func viewDidLoad() {

@@ -16,6 +16,10 @@ final class InvestmentListViewModel: ViewModel {
         return investments.count
     }
     
+    func viewModel(forInvestmentAtIndex index: Int) -> InvestmentViewModel {
+        return InvestmentViewModel(investment: investments[index])
+    }
+    
     func documentID(forInvestmentAtIndex index: Int) -> String? {
         return investments[index].documentID
     }

@@ -10,7 +10,7 @@ import Foundation
 
 final class InvestmentViewModel: ViewModel {
     
-    private (set) var investment: Investment
+    private var investment: Investment
     
     override var documentID: String? {
         get { return investment.documentID }

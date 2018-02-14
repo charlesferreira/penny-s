@@ -8,7 +8,7 @@
 
 final class ProductViewModel: ViewModel {
     
-    private (set) var product: Product
+    private var product: Product
     
     override var documentID: String? {
         get { return product.documentID }

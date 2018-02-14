@@ -81,7 +81,7 @@ class InvestmentViewController: BaseViewController {
     private func updateNavigationBar() {
         let isNew = (vm.documentID ?? "").isEmpty
         navigationItem.title = (isNew ? "Novo" : "Editar") + " investimento"
-        saveButton.title = isNew ? "Criar" : "OK"
+        saveButton.title = isNew ? "Seguinte" : "OK"
     }
     
     private func updateDatePickers() {
@@ -127,6 +127,23 @@ extension InvestmentViewController: ViewModelDelegate {
 }
 
 extension InvestmentViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard textField == initialValueField,
+            var text = initialValueField.text else { return true }
+        
+        if string == "" && !text.isEmpty {
+            let secondToLast = text.index(before: text.endIndex)
+            text = String(text[..<secondToLast])
+        } else {
+            text = (textField.text ?? "") + string
+        }
+        
+        textField.text = text.numbersToDouble.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        textFieldsChanged()
+        
+        return false
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

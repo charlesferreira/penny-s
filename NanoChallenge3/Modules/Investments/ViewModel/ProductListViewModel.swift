@@ -14,6 +14,10 @@ final class ProductListViewModel: ViewModel {
         return products.count
     }
     
+    func viewModel(forProductAtIndex index: Int) -> ProductViewModel {
+        return ProductViewModel(product: products[index])
+    }
+    
     func documentID(forProductAtIndex index: Int) -> String? {
         return products[index].documentID
     }

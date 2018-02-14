@@ -17,11 +17,8 @@ class ProductListViewController: BaseViewController {
     private lazy var institution = InstitutionViewModel()
     private lazy var vm = ProductListViewModel()
     
-    func setup(documentID: String?, name: String, hue: Float, balance: Double) {
-        institution.documentID = documentID
-        institution.name = name
-        institution.hue = hue
-        institution.balance = balance
+    func setup(viewModel institutionVM: InstitutionViewModel) {
+        institution = institutionVM
     }
     
     override func viewDidLoad() {

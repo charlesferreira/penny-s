@@ -15,10 +15,10 @@ class SavingAccountTableViewCell: UITableViewCell {
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var progressViewWidthConstraint: NSLayoutConstraint!
     
-    func setup(name: String, hue: CGFloat, goal: Double, balance: Double) {
-        nameLabel.text = name
-        updateBackgroundTint(hue: hue)
-        updateProgressView(hue: hue, progress: CGFloat(balance / goal))
+    func setup(viewModel vm: SavingAccountViewModel) {
+        nameLabel.text = vm.name
+        updateBackgroundTint(hue: CGFloat(vm.hue))
+        updateProgressView(hue: CGFloat(vm.hue), progress: CGFloat(vm.balance / vm.goal))
     }
     
     func updateBackgroundTint(hue: CGFloat) {
