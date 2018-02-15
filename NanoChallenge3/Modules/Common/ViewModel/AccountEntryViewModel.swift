@@ -6,6 +6,8 @@
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
+import Foundation
+
 class AccountEntryViewModel: ViewModel {
     
     private var entry: AccountEntry
@@ -13,6 +15,14 @@ class AccountEntryViewModel: ViewModel {
     override var documentID: String? {
         get { return entry.documentID }
         set { entry.documentID = newValue }
+    }
+    
+    var date: Date {
+        return entry.date
+    }
+    
+    var value: Double {
+        return entry.value
     }
     
     convenience init(documentID: String, data: [String: Any]) {

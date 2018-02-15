@@ -12,6 +12,7 @@ class ProductListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var balanceBackgroundTint: UIView!
+    @IBOutlet weak var institutionNameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
     private lazy var institution = InstitutionViewModel()
@@ -36,7 +37,7 @@ class ProductListViewController: BaseViewController {
     }
     
     private func updateLayout() {
-        navigationItem.title = institution.name
+        institutionNameLabel.text = institution.name
         balanceBackgroundTint.backgroundColor = UIColor(hue: CGFloat(institution.hue), saturation: 1, brightness: 1, alpha: 1)
         balanceLabel.text = institution.balance.asCurrency(symbol: "R$ ")
     }

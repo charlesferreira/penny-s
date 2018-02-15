@@ -81,6 +81,14 @@ final class InvestmentViewModel: ViewModel {
         return [interest, liquidity, dueDate.toString()].filter { !$0.isEmpty }.joined(separator: " ")
     }
     
+    var summaryForEntryList: String {
+        return [
+            "Compra: \(purchaseDate.toString())",
+            "vcto: \(dueDate.toString())",
+            "inicial: " + initialValue.asCurrency(symbol: "R$ ")
+        ].joined(separator: ", ")
+    }
+    
     convenience init(documentID: String, data: [String: Any]) {
         self.init(investment: Investment(documentID: documentID, data: data)!)
     }

@@ -12,6 +12,7 @@ class InvestmentListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var balanceBackgroundTint: UIView!
+    @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
     private lazy var productVM = ProductViewModel()
@@ -40,7 +41,7 @@ class InvestmentListViewController: BaseViewController {
     }
     
     private func updateLayout() {
-        navigationItem.title = productVM.name
+        productNameLabel.text = productVM.name
         navigationItem.backBarButtonItem?.title = institutionName
         balanceBackgroundTint.backgroundColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 1)
         balanceLabel.text = productVM.balance.asCurrency(symbol: "R$ ")
@@ -73,9 +74,9 @@ class InvestmentListViewController: BaseViewController {
         }
         
         // listar histórico do investimento
-//        if let controller = destination as? InvestmentEntriesViewController {
-//            controller.setup(viewModel: vm[indexPath.row])
-//        }
+        if let controller = destination as? InvestmentLogViewController {
+            controller.setup(productVM: productVM, investmentVM: vm[indexPath.row], hue: hue)
+        }
     }
     
     // cria um unwind segue no storyboard (método intencionalmente vazio)
@@ -103,6 +104,10 @@ extension InvestmentListViewController: UITableViewDelegate, UITableViewDataSour
         cell.setup(viewModel: vm[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showInvestmentLog", sender: indexPath)
     }
     
     // exibe as opções da célula ao swipe pra esquerda
