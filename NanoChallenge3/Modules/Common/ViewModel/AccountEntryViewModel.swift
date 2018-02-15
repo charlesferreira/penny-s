@@ -28,6 +28,7 @@ class AccountEntryViewModel: ViewModel {
     }
     
     func persist() {
+        isDirty = true
         super.persist(data: entry.data, toCollection: "account-entries") { error in
             guard error == nil else {
                 self.delegate?.viewModelDidNotPersistData?(self)
