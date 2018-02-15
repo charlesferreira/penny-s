@@ -19,15 +19,24 @@ class IncomeAllocationViewController: BaseViewController {
     private lazy var investmentVM = InvestmentViewModel()
     private lazy var vm = IncomeAllocationViewModel()
     
-    var moneyToAllocate: Double!
+    var income: Double!
     var leftover: Double {
-        return moneyToAllocate - vm.balance
+        return income - vm.balance
     }
     
     // prepara para criar um investimento
     func setup(viewModel investmentVM: InvestmentViewModel) {
         self.investmentVM = investmentVM
         investmentVM.delegate = self
+        income = investmentVM.initialValue
+    }
+    
+    // prepara para atualizar um investimento
+    func setup(viewModel investmentVM: InvestmentViewModel, income: Double) {
+        self.investmentVM = investmentVM
+        investmentVM.delegate = self
+        investmentVM.balance += income
+        self.income = income
     }
     
     override func viewDidLoad() {
@@ -39,20 +48,12 @@ class IncomeAllocationViewController: BaseViewController {
         // view model
         vm.delegate = self
         
-        // atualiza o layout
-        moneyToAllocate = investmentVM.documentID == nil ? investmentVM.initialValue : 0
         updateLayout()
     }
     
     @IBAction func saveTapped(_ sender: Any) {
         disableUserInteraction()
-        
-        guard investmentVM.documentID != nil else {
-            investmentVM.persist()
-            return
-        }
-        
-        vm.persist(investmentID: investmentVM.documentID!)
+        investmentVM.persist()
     }
     
     @IBAction func createCellTapped(_ sender: Any) {

@@ -55,10 +55,10 @@ class InvestmentLogViewController: BaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // vai atualizar valor do investimento
-//        if let navigationController = segue.destination as? UINavigationController,
-//            let controller = navigationController.topViewController as? InvestmentUpdateViewController {
-//            controller.setup(productID: productVM.documentID!)
-//        }
+        if let navigationController = segue.destination as? UINavigationController,
+            let controller = navigationController.topViewController as? InvestmentNewEntryViewController {
+            controller.setup(investmentVM: investmentVM)
+        }
     }
     
     // cria um unwind segue no storyboard (método intencionalmente vazio)

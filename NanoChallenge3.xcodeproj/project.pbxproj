@@ -29,6 +29,7 @@
 		564C2B8520352EB50013582B /* AccountEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8420352EB50013582B /* AccountEntryTableViewCell.swift */; };
 		564C2B8720352FB70013582B /* AccountEntryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8620352FB70013582B /* AccountEntryListViewModel.swift */; };
 		564C2B8920353B970013582B /* SavingAccountLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8820353B970013582B /* SavingAccountLogViewController.swift */; };
+		564C2B8B20354B270013582B /* InvestmentNewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8A20354B270013582B /* InvestmentNewEntryViewController.swift */; };
 		565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056E9203110E6008D3237 /* ProductListViewModel.swift */; };
 		565056EC203113B5008D3237 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056EB203113B5008D3237 /* ProductViewController.swift */; };
 		565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056ED2031140C008D3237 /* ProductViewModel.swift */; };
@@ -87,6 +88,7 @@
 		564C2B8420352EB50013582B /* AccountEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntryTableViewCell.swift; sourceTree = "<group>"; };
 		564C2B8620352FB70013582B /* AccountEntryListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntryListViewModel.swift; sourceTree = "<group>"; };
 		564C2B8820353B970013582B /* SavingAccountLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingAccountLogViewController.swift; sourceTree = "<group>"; };
+		564C2B8A20354B270013582B /* InvestmentNewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentNewEntryViewController.swift; sourceTree = "<group>"; };
 		565056E9203110E6008D3237 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		565056EB203113B5008D3237 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		565056ED2031140C008D3237 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				564C2B8220352B2D0013582B /* InvestmentLogViewController.swift */,
 				5630E66320330C8B00D6E2FA /* InvestmentViewController.swift */,
 				56D056A92033F71500E8286A /* IncomeAllocationViewController.swift */,
+				564C2B8A20354B270013582B /* InvestmentNewEntryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				5616D40C202FDB66008A59E6 /* Institution.swift in Sources */,
 				56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */,
 				5630E66420330C8B00D6E2FA /* InvestmentViewController.swift in Sources */,
+				564C2B8B20354B270013582B /* InvestmentNewEntryViewController.swift in Sources */,
 				56A5DDBC20320700002FBACB /* SavingAccountViewController.swift in Sources */,
 				564C2B8520352EB50013582B /* AccountEntryTableViewCell.swift in Sources */,
 				56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */,
