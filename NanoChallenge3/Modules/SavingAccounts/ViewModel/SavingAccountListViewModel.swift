@@ -8,7 +8,7 @@
 
 final class SavingAccountListViewModel: ViewModel {
     
-    private var accounts: [SavingAccountViewModel] = []
+    private (set) var accounts: [SavingAccountViewModel] = []
     
     subscript(i: Int) -> SavingAccountViewModel {
         return accounts[i]
@@ -27,7 +27,7 @@ final class SavingAccountListViewModel: ViewModel {
             self.accounts = snapshot.documents.flatMap {
                 SavingAccountViewModel(documentID: $0.documentID, data: $0.data())
             }
-            self.delegate?.viewModelDidChange?()
+            self.delegate?.viewModelDidChange?(self)
         }
     }
 }

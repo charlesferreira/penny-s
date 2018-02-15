@@ -29,7 +29,7 @@ final class InvestmentListViewModel: ViewModel {
             self.investments = snapshot.documents.flatMap {
                 InvestmentViewModel(documentID: $0.documentID, data: $0.data())
             }
-            self.delegate?.viewModelDidChange?()
+            self.delegate?.viewModelDidChange?(self)
         }
     }
     

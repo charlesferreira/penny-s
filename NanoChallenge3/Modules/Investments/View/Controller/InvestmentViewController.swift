@@ -110,7 +110,9 @@ class InvestmentViewController: BaseViewController {
     @IBAction func saveTapped(_ sender: Any) {
         // editando, apenas persiste
         if vm.documentID != nil {
-            disableUserInteraction()
+            if vm.isDirty {
+                disableUserInteraction()
+            }
             vm.persist()
             return
         }
@@ -127,7 +129,7 @@ class InvestmentViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let controller = segue.destination as? AllocateIncomeViewController {
+        if let controller = segue.destination as? IncomeAllocationViewController {
             controller.setup(viewModel: vm)
             return
         }
@@ -143,7 +145,7 @@ class InvestmentViewController: BaseViewController {
 
 extension InvestmentViewController: ViewModelDelegate {
     
-    func viewModelDidCreateDocument() {
+    func viewModelDidPersistData(_ viewModel: ViewModel) {
         dismiss(animated: true, completion: nil)
     }
 }

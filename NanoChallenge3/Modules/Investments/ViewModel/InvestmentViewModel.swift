@@ -94,18 +94,12 @@ final class InvestmentViewModel: ViewModel {
     }
     
     func persist() {
-        print("ID: " + (investment.documentID ?? "nil"))
-        print(investment.data)
         super.persist(data: investment.data, toCollection: "investments") { error in
             guard error == nil else {
-                print("erro")
-                self.delegate?.viewModelDidNotPersistData?()
+                self.delegate?.viewModelDidNotPersistData?(self)
                 return
             }
-            
-            print("ok")
-            
-            self.delegate?.viewModelDidCreateDocument?()
+            self.delegate?.viewModelDidPersistData?(self)
         }
     }
     

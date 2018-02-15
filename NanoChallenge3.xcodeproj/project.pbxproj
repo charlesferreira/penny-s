@@ -44,10 +44,17 @@
 		56A5DDBA2032062A002FBACB /* SavingAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDB92032062A002FBACB /* SavingAccountTableViewCell.swift */; };
 		56A5DDBC20320700002FBACB /* SavingAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDBB20320700002FBACB /* SavingAccountViewController.swift */; };
 		56A5DDBE2032077C002FBACB /* SavingAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5DDBD2032077C002FBACB /* SavingAccountViewModel.swift */; };
+		56B3C5512034D07700784386 /* IncomeAllocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3C5502034D07700784386 /* IncomeAllocationTableViewCell.swift */; };
+		56B3C5532034D5F500784386 /* IncomeAllocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3C5522034D5F400784386 /* IncomeAllocationViewModel.swift */; };
+		56B3C5572034D89500784386 /* IncomeAllocationViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3C5562034D89500784386 /* IncomeAllocationViewModelDelegate.swift */; };
+		56B3C55A2034D94900784386 /* IncomeAllocationTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3C5592034D94900784386 /* IncomeAllocationTableViewCellDelegate.swift */; };
+		56B3C55C2034F2FA00784386 /* IncomeAllocationTableViewCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3C55B2034F2FA00784386 /* IncomeAllocationTableViewCellDataSource.swift */; };
+		56B3C55E203517AC00784386 /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3C55D203517AC00784386 /* AccountType.swift */; };
+		56B3C560203518E600784386 /* AccountEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B3C55F203518E600784386 /* AccountEntryViewModel.swift */; };
 		56C2FEA1203091EB006EF3C4 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */; };
 		56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */; };
 		56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2FEA52030936C006EF3C4 /* ViewModel.swift */; };
-		56D056AA2033F71500E8286A /* AllocateIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D056A92033F71500E8286A /* AllocateIncomeViewController.swift */; };
+		56D056AA2033F71500E8286A /* IncomeAllocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D056A92033F71500E8286A /* IncomeAllocationViewController.swift */; };
 		8EE172D94CDCD24AC3F3CF2C /* Pods_NanoChallenge3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,10 +100,17 @@
 		56A5DDB92032062A002FBACB /* SavingAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountTableViewCell.swift; sourceTree = "<group>"; };
 		56A5DDBB20320700002FBACB /* SavingAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountViewController.swift; sourceTree = "<group>"; };
 		56A5DDBD2032077C002FBACB /* SavingAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccountViewModel.swift; sourceTree = "<group>"; };
+		56B3C5502034D07700784386 /* IncomeAllocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeAllocationTableViewCell.swift; sourceTree = "<group>"; };
+		56B3C5522034D5F400784386 /* IncomeAllocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeAllocationViewModel.swift; sourceTree = "<group>"; };
+		56B3C5562034D89500784386 /* IncomeAllocationViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeAllocationViewModelDelegate.swift; sourceTree = "<group>"; };
+		56B3C5592034D94900784386 /* IncomeAllocationTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeAllocationTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		56B3C55B2034F2FA00784386 /* IncomeAllocationTableViewCellDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeAllocationTableViewCellDataSource.swift; sourceTree = "<group>"; };
+		56B3C55D203517AC00784386 /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		56B3C55F203518E600784386 /* AccountEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntryViewModel.swift; sourceTree = "<group>"; };
 		56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModelDelegate.swift; path = NanoChallenge3/Modules/Common/ViewModel/ViewModelDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA220309251006EF3C4 /* InstitutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstitutionViewModel.swift; path = NanoChallenge3/Modules/Investments/ViewModel/InstitutionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		56C2FEA52030936C006EF3C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		56D056A92033F71500E8286A /* AllocateIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllocateIncomeViewController.swift; sourceTree = "<group>"; };
+		56D056A92033F71500E8286A /* IncomeAllocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeAllocationViewController.swift; sourceTree = "<group>"; };
 		B502A1510175644FEB9CD726 /* Pods_NanoChallenge3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +167,8 @@
 				565056ED2031140C008D3237 /* ProductViewModel.swift */,
 				5630E65F2032EFC100D6E2FA /* InvestmentListViewModel.swift */,
 				5630E66520330DA000D6E2FA /* InvestmentViewModel.swift */,
+				56B3C5522034D5F400784386 /* IncomeAllocationViewModel.swift */,
+				56B3C5562034D89500784386 /* IncomeAllocationViewModelDelegate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -216,7 +232,9 @@
 		5616D41D20304BDA008A59E6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				56B3C5582034D93A00784386 /* Delegate */,
 				5616D41E20304BF3008A59E6 /* InstitutionTableViewCell.swift */,
+				56B3C5502034D07700784386 /* IncomeAllocationTableViewCell.swift */,
 				569A887120310FAD00620364 /* ProductTableViewCell.swift */,
 				5630E65D2032EFA400D6E2FA /* InvestmentTableViewCell.swift */,
 			);
@@ -227,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				5616D4212030541A008A59E6 /* DocumentSerializable.swift */,
+				56B3C55D203517AC00784386 /* AccountType.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -279,7 +298,7 @@
 				565056EB203113B5008D3237 /* ProductViewController.swift */,
 				5630E65B2032EF6700D6E2FA /* InvestmentListViewController.swift */,
 				5630E66320330C8B00D6E2FA /* InvestmentViewController.swift */,
-				56D056A92033F71500E8286A /* AllocateIncomeViewController.swift */,
+				56D056A92033F71500E8286A /* IncomeAllocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -336,6 +355,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		56B3C5582034D93A00784386 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				56B3C5592034D94900784386 /* IncomeAllocationTableViewCellDelegate.swift */,
+				56B3C55B2034F2FA00784386 /* IncomeAllocationTableViewCellDataSource.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		56C2FE9A2030891C006EF3C4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +388,7 @@
 			children = (
 				56C2FEA52030936C006EF3C4 /* ViewModel.swift */,
 				56C2FEA0203091EB006EF3C4 /* ViewModelDelegate.swift */,
+				56B3C55F203518E600784386 /* AccountEntryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -526,6 +555,7 @@
 				5630E65C2032EF6700D6E2FA /* InvestmentListViewController.swift in Sources */,
 				56A5DDBE2032077C002FBACB /* SavingAccountViewModel.swift in Sources */,
 				5630E6622032F7CD00D6E2FA /* Date.swift in Sources */,
+				56B3C5572034D89500784386 /* IncomeAllocationViewModelDelegate.swift in Sources */,
 				56A5DDB8203201A3002FBACB /* SavingAccountListViewModel.swift in Sources */,
 				5616D410202FDE28008A59E6 /* Investment.swift in Sources */,
 				569A887020310E5400620364 /* ProductListViewController.swift in Sources */,
@@ -534,9 +564,10 @@
 				5630E66420330C8B00D6E2FA /* InvestmentViewController.swift in Sources */,
 				56A5DDBC20320700002FBACB /* SavingAccountViewController.swift in Sources */,
 				56610C55202E5699005ED1D1 /* InstitutionListViewController.swift in Sources */,
+				56B3C55A2034D94900784386 /* IncomeAllocationTableViewCellDelegate.swift in Sources */,
 				5616D42920308524008A59E6 /* InstitutionViewController.swift in Sources */,
 				5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */,
-				56D056AA2033F71500E8286A /* AllocateIncomeViewController.swift in Sources */,
+				56D056AA2033F71500E8286A /* IncomeAllocationViewController.swift in Sources */,
 				56C2FEA62030936C006EF3C4 /* ViewModel.swift in Sources */,
 				569A886C2030AAF200620364 /* BaseViewController.swift in Sources */,
 				5616D41F20304BF3008A59E6 /* InstitutionTableViewCell.swift in Sources */,
@@ -544,17 +575,22 @@
 				569A887220310FAD00620364 /* ProductTableViewCell.swift in Sources */,
 				5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */,
 				5616D41320304A74008A59E6 /* InstitutionListViewModel.swift in Sources */,
+				56B3C5512034D07700784386 /* IncomeAllocationTableViewCell.swift in Sources */,
 				5630E66620330DA000D6E2FA /* InvestmentViewModel.swift in Sources */,
+				56B3C55E203517AC00784386 /* AccountType.swift in Sources */,
 				56A2859320325C1A00DF327C /* String.swift in Sources */,
+				56B3C5532034D5F500784386 /* IncomeAllocationViewModel.swift in Sources */,
 				56A5DDB620320090002FBACB /* SavingAccountListViewController.swift in Sources */,
 				565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */,
 				5630E65E2032EFA400D6E2FA /* InvestmentTableViewCell.swift in Sources */,
+				56B3C55C2034F2FA00784386 /* IncomeAllocationTableViewCellDataSource.swift in Sources */,
 				5616D4272030751F008A59E6 /* HueColorPickerView.swift in Sources */,
 				5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */,
 				56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */,
 				565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */,
 				565056EC203113B5008D3237 /* ProductViewController.swift in Sources */,
 				560E286B2031BD6C006C2F82 /* Double.swift in Sources */,
+				56B3C560203518E600784386 /* AccountEntryViewModel.swift in Sources */,
 				56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */,
 				5630E6602032EFC100D6E2FA /* InvestmentListViewModel.swift in Sources */,
 			);

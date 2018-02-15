@@ -10,10 +10,10 @@ import Foundation
 
 @objc protocol ViewModelDelegate: AnyObject {
     
-    @objc optional func viewModelDidChange()
+    @objc optional func viewModelDidChange(_ viewModel: ViewModel)
     
-    @objc optional func viewModelDidCreateDocument()
+    @objc optional func viewModelDidPersistData(_ viewModel: ViewModel)
     
-    @objc optional func viewModelDidNotPersistData()
+    @objc optional func viewModelDidNotPersistData(_ viewModel: ViewModel)
 }
 

@@ -67,7 +67,9 @@ class InstitutionViewController: BaseViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        disableUserInteraction()
+        if vm.isDirty {
+            disableUserInteraction()
+        }
         vm.persist()
     }
     
@@ -85,7 +87,7 @@ class InstitutionViewController: BaseViewController {
 
 extension InstitutionViewController: ViewModelDelegate {
     
-    func viewModelDidCreateDocument() {
+    func viewModelDidPersistData(_ viewModel: ViewModel) {
         dismiss(animated: true, completion: nil)
     }
 }

@@ -62,11 +62,11 @@ final class SavingAccountViewModel: ViewModel {
     func persist() {
         super.persist(data: savingAccount.data, toCollection: "saving-accounts") { error in
             guard error == nil else {
-                self.delegate?.viewModelDidNotPersistData?()
+                self.delegate?.viewModelDidNotPersistData?(self)
                 return
             }
             
-            self.delegate?.viewModelDidCreateDocument?()
+            self.delegate?.viewModelDidPersistData?(self)
         }
     }
     

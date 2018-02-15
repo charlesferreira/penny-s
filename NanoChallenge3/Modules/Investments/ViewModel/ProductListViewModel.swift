@@ -27,7 +27,7 @@ final class ProductListViewModel: ViewModel {
             self.products = snapshot.documents.flatMap {
                 ProductViewModel(documentID: $0.documentID, data: $0.data())
             }
-            self.delegate?.viewModelDidChange?()
+            self.delegate?.viewModelDidChange?(self)
         }
     }
     

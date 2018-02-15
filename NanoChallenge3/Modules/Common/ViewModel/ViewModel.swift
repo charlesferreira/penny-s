@@ -8,7 +8,7 @@
 
 import Firebase
 
-class ViewModel {
+@objc class ViewModel: NSObject {
     
     weak var delegate: ViewModelDelegate?
     
@@ -17,7 +17,7 @@ class ViewModel {
     var documentID: String?
     var isDirty: Bool = false
     
-    init() {
+    override init() {
         db = Firestore.firestore()
     }
     
@@ -32,7 +32,7 @@ class ViewModel {
         if let documentID = documentID {
             db.collection(path).document(documentID).setData(data, completion: completion)
         } else {
-            db.collection(path).addDocument(data: data, completion: completion)
+            self.documentID = db.collection(path).addDocument(data: data, completion: completion).documentID
         }
     }
 }

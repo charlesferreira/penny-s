@@ -73,7 +73,9 @@ class ProductViewController: BaseViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        disableUserInteraction()
+        if vm.isDirty {
+            disableUserInteraction()
+        }
         vm.persist()
     }
     
@@ -93,7 +95,7 @@ class ProductViewController: BaseViewController {
 
 extension ProductViewController: ViewModelDelegate {
     
-    func viewModelDidCreateDocument() {
+    func viewModelDidPersistData(_ viewModel: ViewModel) {
         dismiss(animated: true, completion: nil)
     }
 }

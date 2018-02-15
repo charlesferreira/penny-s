@@ -53,7 +53,7 @@ class InstitutionListViewController: BaseViewController {
 
 extension InstitutionListViewController: ViewModelDelegate {
     
-    func viewModelDidChange() {
+    func viewModelDidChange(_ viewModel: ViewModel) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

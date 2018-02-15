@@ -71,7 +71,9 @@ class SavingAccountViewController: BaseViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        disableUserInteraction()
+        if vm.isDirty {
+            disableUserInteraction()
+        }
         vm.persist()
     }
     
@@ -91,7 +93,7 @@ class SavingAccountViewController: BaseViewController {
 
 extension SavingAccountViewController: ViewModelDelegate {
     
-    func viewModelDidCreateDocument() {
+    func viewModelDidPersistData(_ viewModel: ViewModel) {
         dismiss(animated: true, completion: nil)
     }
 }

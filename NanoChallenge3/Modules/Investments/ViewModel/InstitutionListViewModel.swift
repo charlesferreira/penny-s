@@ -41,7 +41,7 @@ final class InstitutionListViewModel: ViewModel {
             }
             
             self.institutions = snapshot.documents.flatMap { Institution(documentID: $0.documentID, data: $0.data()) }
-            self.delegate?.viewModelDidChange?()
+            self.delegate?.viewModelDidChange?(self)
         }
     }
     

@@ -78,7 +78,7 @@ class ProductListViewController: BaseViewController {
 
 extension ProductListViewController: ViewModelDelegate {
     
-    func viewModelDidChange() {
+    func viewModelDidChange(_ viewModel: ViewModel) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

@@ -84,7 +84,7 @@ class InvestmentListViewController: BaseViewController {
 
 extension InvestmentListViewController: ViewModelDelegate {
     
-    func viewModelDidChange() {
+    func viewModelDidChange(_ viewModel: ViewModel) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

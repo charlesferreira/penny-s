@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllocateIncomeViewController: BaseViewController {
+class IncomeAllocationViewController: BaseViewController {
 
     @IBOutlet weak var leftoverLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -62,7 +62,7 @@ class AllocateIncomeViewController: BaseViewController {
     }
 }
 
-extension AllocateIncomeViewController: ViewModelDelegate {
+extension IncomeAllocationViewController: ViewModelDelegate {
     
     func viewModelDidCreateDocument() {
         dismiss(animated: true, completion: nil)

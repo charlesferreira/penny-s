@@ -50,11 +50,11 @@ final class InstitutionViewModel: ViewModel {
     func persist() {
         super.persist(data: institution.data, toCollection: "institutions") { error in
             guard error == nil else {
-                self.delegate?.viewModelDidNotPersistData?()
+                self.delegate?.viewModelDidNotPersistData?(self)
                 return
             }
             
-            self.delegate?.viewModelDidCreateDocument?()
+            self.delegate?.viewModelDidPersistData?(self)
         }
     }
     
