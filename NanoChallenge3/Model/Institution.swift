@@ -11,7 +11,7 @@ struct Institution {
     var documentID: String?
     var name: String = ""
     var hue: Float = 0.66
-    var balance: Double = 0.0
+    var balance: Int = 0
 }
 
 extension Institution: DocumentSerializable {
@@ -19,7 +19,7 @@ extension Institution: DocumentSerializable {
     init?(documentID: String, data: [String : Any]) {
         guard let name = data["name"] as? String,
             let hue = data["hue"] as? Float,
-            let balance = data["balance"] as? Double else { return nil }
+            let balance = data["balance"] as? Int else { return nil }
         
         self.init(documentID: documentID, name: name, hue: hue, balance: balance)
     }

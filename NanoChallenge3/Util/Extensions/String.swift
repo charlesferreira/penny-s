@@ -8,7 +8,7 @@
 
 import Foundation
 extension String {
-    var numbersToDouble: Double {
+    var intValue: Int {
         var numbers: String
         do {
             let regex = try NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
@@ -18,6 +18,6 @@ extension String {
             numbers = "0"
         }
         
-        return Double(numbers)! / 100
+        return Int(numbers)!
     }
 }

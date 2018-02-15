@@ -36,7 +36,7 @@ final class ProductViewModel: ViewModel {
         }
     }
     
-    var balance: Double {
+    var balance: Int {
         get { return product.balance }
         set {
             product.balance = newValue

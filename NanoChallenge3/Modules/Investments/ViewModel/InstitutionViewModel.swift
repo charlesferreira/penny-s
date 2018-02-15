@@ -31,7 +31,7 @@ final class InstitutionViewModel: ViewModel {
         }
     }
     
-    var balance: Double {
+    var balance: Int {
         get { return institution.balance }
         set {
             institution.balance = newValue

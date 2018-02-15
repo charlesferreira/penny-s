@@ -30,7 +30,7 @@ final class InstitutionListViewModel: ViewModel {
         return institutions[index].hue
     }
     
-    func balance(forInstitutionAtIndex index: Int) -> Double {
+    func balance(forInstitutionAtIndex index: Int) -> Int {
         return institutions[index].balance
     }
     

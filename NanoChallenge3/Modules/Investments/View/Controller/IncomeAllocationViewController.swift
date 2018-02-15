@@ -21,8 +21,8 @@ class IncomeAllocationViewController: BaseViewController {
     private lazy var institutionVM = InstitutionViewModel()
     private lazy var vm = IncomeAllocationViewModel()
     
-    var income: Double!
-    var leftover: Double {
+    var income: Int!
+    var leftover: Int {
         return income - vm.balance
     }
     
@@ -36,7 +36,7 @@ class IncomeAllocationViewController: BaseViewController {
     }
     
     // prepara para atualizar um investimento
-    func setup(viewModel investmentVM: InvestmentViewModel, productVM: ProductViewModel, institutionVM: InstitutionViewModel, income: Double) {
+    func setup(viewModel investmentVM: InvestmentViewModel, productVM: ProductViewModel, institutionVM: InstitutionViewModel, income: Int) {
         self.investmentVM = investmentVM
         self.productVM = productVM
         self.institutionVM = institutionVM
@@ -102,9 +102,11 @@ extension IncomeAllocationViewController: ViewModelDelegate {
 
 extension IncomeAllocationViewController: IncomeAllocationViewModelDelegate {
     
-    func viewModelDidChange(_ viewModel: IncomeAllocationViewModel) {
+    func viewModelDidChange(_ viewModel: IncomeAllocationViewModel, tableViewNeedsDataReload: Bool) {
         updateLayout()
-        tableView.reloadData()
+        if tableViewNeedsDataReload {
+            tableView.reloadData()
+        }
     }
     
     func viewModelDidPersistData(_ viewModel: IncomeAllocationViewModel) {
@@ -115,7 +117,12 @@ extension IncomeAllocationViewController: IncomeAllocationViewModelDelegate {
 extension IncomeAllocationViewController: IncomeAllocationTableViewCellDelegate {
     
     func tableViewCellDidChange(_ cell: IncomeAllocationTableViewCell) {
-        vm.updateAllocation(ofCell: cell)
+        vm.updateAllocation(withContentsOfCell: cell)
+    }
+    
+    func tableViewCellDidUpdateValue(_ cell: IncomeAllocationTableViewCell) {
+        vm.updateAllocation(withContentsOfCell: cell)
+        updateLayout()
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  Double.swift
+//  Int.swift
 //  NanoChallenge3
 //
 //  Created by Charles Ferreira on 12/02/2018.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Double {
+extension Int {
     
-    func asCurrency(symbol: String? = nil, zero: String? = nil, limit: Double? = nil) -> String {
+    func asCurrency(symbol: String? = nil, zero: String? = nil, limit: Int? = nil) -> String {
         if zero != nil && self == 0 {
             return zero!
         }
@@ -19,7 +19,7 @@ extension Double {
         formatter.numberStyle = .currency
         formatter.currencySymbol = symbol ?? ""
         
-        let value = limit != nil && self > limit! ? limit! : self
+        let value = Double(limit != nil && self > limit! ? limit! : self) / 100.0
         if let formattedValue = formatter.string(from: value as NSNumber) {
             return formattedValue
         }

@@ -25,6 +25,7 @@ class InvestmentNewEntryViewController: BaseViewController {
     
     override func viewDidLoad() {
         valueField.delegate = self
+        valueField.becomeFirstResponder()
         updateSaveButton()
     }
     
@@ -33,13 +34,13 @@ class InvestmentNewEntryViewController: BaseViewController {
     }
     
     func updateSaveButton() {
-        saveButton.isEnabled = (valueField.text?.numbersToDouble ?? 0) > 0
+        saveButton.isEnabled = (valueField.text?.intValue ?? 0) > 0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let controller = segue.destination as? IncomeAllocationViewController else { return }
         
-        let income = valueField.text!.numbersToDouble
+        let income = valueField.text!.intValue
         controller.setup(viewModel: investmentVM, productVM: productVM, institutionVM: institutionVM, income: income)
     }
 }
@@ -61,7 +62,7 @@ extension InvestmentNewEntryViewController: UITextFieldDelegate {
             text = (textField.text ?? "") + string
         }
         
-        textField.text = text.numbersToDouble.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        textField.text = text.intValue.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999_99)
         updateSaveButton()
         return false
     }

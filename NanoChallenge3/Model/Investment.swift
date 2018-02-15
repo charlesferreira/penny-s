@@ -16,8 +16,8 @@ struct Investment {
     var dueDate: Date = Date()
     var interest: String = ""
     var liquidity: String = ""
-    var initialValue: Double = 0
-    var balance: Double = 0
+    var initialValue: Int = 0
+    var balance: Int = 0
 }
 
 extension Investment: DocumentSerializable {
@@ -28,8 +28,8 @@ extension Investment: DocumentSerializable {
             let dueDate = data["dueDate"] as? Date,
             let interest = data["interest"] as? String,
             let liquidity = data["liquidity"] as? String,
-            let initialValue  = data["initialValue"] as? Double,
-            let balance  = data["balance"] as? Double else { return nil }
+            let initialValue  = data["initialValue"] as? Int,
+            let balance  = data["balance"] as? Int else { return nil }
         
         self.init(
             documentID: documentID,

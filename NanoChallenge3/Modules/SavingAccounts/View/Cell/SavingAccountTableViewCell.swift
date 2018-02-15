@@ -18,7 +18,7 @@ class SavingAccountTableViewCell: UITableViewCell {
     func setup(viewModel vm: SavingAccountViewModel) {
         nameLabel.text = vm.name
         updateBackgroundTint(hue: CGFloat(vm.hue))
-        updateProgressView(hue: CGFloat(vm.hue), progress: CGFloat(vm.balance / vm.goal))
+        updateProgressView(hue: CGFloat(vm.hue), progress: CGFloat(vm.balance) / CGFloat(vm.goal))
     }
     
     func updateBackgroundTint(hue: CGFloat) {

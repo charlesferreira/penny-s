@@ -12,7 +12,7 @@ struct Product {
     var institutionID: String = ""
     var name: String = ""
     var note: String = ""
-    var balance: Double = 0.0
+    var balance: Int = 0
 }
 
 extension Product: DocumentSerializable {
@@ -21,7 +21,7 @@ extension Product: DocumentSerializable {
         guard let institutionID = data["institutionID"] as? String,
             let name = data["name"] as? String,
             let note = data["note"] as? String,
-            let balance  = data["balance"] as? Double else { return nil }
+            let balance  = data["balance"] as? Int else { return nil }
         
         self.init(
             documentID: documentID,

@@ -33,7 +33,7 @@ final class SavingAccountViewModel: ViewModel {
         }
     }
     
-    var goal: Double {
+    var goal: Int {
         get { return savingAccount.goal }
         set {
             savingAccount.goal = newValue
@@ -41,7 +41,7 @@ final class SavingAccountViewModel: ViewModel {
         }
     }
     
-    var balance: Double {
+    var balance: Int {
         get { return savingAccount.balance }
         set {
             savingAccount.balance = newValue
@@ -52,7 +52,7 @@ final class SavingAccountViewModel: ViewModel {
     var summary: String {
         return [
             "Atual: ",
-            (100 * balance / goal).asCurrency(),
+            (10000 * balance / goal).asCurrency(),
             "% de ",
             goal.asCurrency(symbol: "R$ ")
         ].joined()

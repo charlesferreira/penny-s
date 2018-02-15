@@ -58,18 +58,18 @@ final class InvestmentViewModel: ViewModel {
         }
     }
     
-    var initialValue: Double {
+    var initialValue: Int {
         get { return investment.initialValue }
         set {
             investment.initialValue = newValue
-            if documentID == nil {
-                balance = newValue
-            }
+//            if documentID == nil {
+//                balance = newValue
+//            }
             isDirty = true
         }
     }
     
-    var balance: Double {
+    var balance: Int {
         get { return investment.balance }
         set {
             investment.balance = newValue

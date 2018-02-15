@@ -1444,7 +1444,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMg-Xh-DhA" userLabel="Value Field Container">
                                                     <rect key="frame" x="20" y="110" width="335" height="50"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R$ 0,00 (valor alocado *)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCA-Jm-0Kf">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R$ 0,00 (valor alocado *)" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCA-Jm-0Kf">
                                                             <rect key="frame" x="20" y="0.0" width="295" height="50"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>

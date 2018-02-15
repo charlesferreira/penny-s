@@ -53,7 +53,7 @@ class SavingAccountViewController: BaseViewController {
     
     @objc func textFieldsChanged() {
         vm.name = nameField.text ?? ""
-        vm.goal = goalField.text?.numbersToDouble ?? 0
+        vm.goal = goalField.text?.intValue ?? 0
         updateSaveButton()
     }
     
@@ -125,7 +125,7 @@ extension SavingAccountViewController: UITextFieldDelegate {
             text = (textField.text ?? "") + string
         }
         
-        textField.text = text.numbersToDouble.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        textField.text = text.intValue.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999_99)
         textFieldsChanged()
         
         return false

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		560E286B2031BD6C006C2F82 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E286A2031BD6C006C2F82 /* Double.swift */; };
+		560E286B2031BD6C006C2F82 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E286A2031BD6C006C2F82 /* Int.swift */; };
 		5616D3FF202E6345008A59E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */; };
 		5616D408202FD618008A59E6 /* SavingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D407202FD618008A59E6 /* SavingAccount.swift */; };
 		5616D40A202FD780008A59E6 /* AccountEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616D409202FD780008A59E6 /* AccountEntry.swift */; };
@@ -66,7 +66,7 @@
 /* Begin PBXFileReference section */
 		14BB8AF6AD380960B8E6901C /* Pods-NanoChallenge3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3.debug.xcconfig"; sourceTree = "<group>"; };
 		40855737DC81F3344F9296AF /* Pods-NanoChallenge3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge3.release.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge3/Pods-NanoChallenge3.release.xcconfig"; sourceTree = "<group>"; };
-		560E286A2031BD6C006C2F82 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		560E286A2031BD6C006C2F82 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		5616D3FE202E6345008A59E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5616D407202FD618008A59E6 /* SavingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAccount.swift; sourceTree = "<group>"; };
 		5616D409202FD780008A59E6 /* AccountEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntry.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		560E28692031BD5F006C2F82 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				560E286A2031BD6C006C2F82 /* Double.swift */,
+				560E286A2031BD6C006C2F82 /* Int.swift */,
 				5630E6612032F7CD00D6E2FA /* Date.swift */,
 				56A2859220325C1A00DF327C /* String.swift */,
 			);
@@ -609,7 +609,7 @@
 				56C2FEA320309251006EF3C4 /* InstitutionViewModel.swift in Sources */,
 				565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */,
 				565056EC203113B5008D3237 /* ProductViewController.swift in Sources */,
-				560E286B2031BD6C006C2F82 /* Double.swift in Sources */,
+				560E286B2031BD6C006C2F82 /* Int.swift in Sources */,
 				56B3C560203518E600784386 /* AccountEntryViewModel.swift in Sources */,
 				56610C53202E5699005ED1D1 /* AppDelegate.swift in Sources */,
 				5630E6602032EFC100D6E2FA /* InvestmentListViewModel.swift in Sources */,

@@ -16,7 +16,7 @@ class IncomeAllocationViewModel {
     private var investmentVM = InvestmentViewModel()
     
     private (set) var accountList: [String]!
-    private (set) var allocations: [(index: Int, value: Double)] = []
+    private (set) var allocations: [(index: Int, value: Int)] = []
     
     let db: Firestore
     
@@ -26,8 +26,8 @@ class IncomeAllocationViewModel {
         return allocations.count
     }
     
-    var balance: Double {
-        return allocations.reduce(0.0) { $0 + $1.value }
+    var balance: Int {
+        return allocations.reduce(0) { $0 + $1.value }
     }
     
     init() {
@@ -37,13 +37,14 @@ class IncomeAllocationViewModel {
     }
     
     func createAllocation() {
-        allocations.append((index: 0, value: 0))
-        delegate?.viewModelDidChange(self)
+        let leftover = delegate?.leftover ?? 0
+        allocations.append((index: 0, value: leftover))
+        delegate?.viewModelDidChange(self, tableViewNeedsDataReload: true)
     }
     
-    func updateAllocation(ofCell cell: IncomeAllocationTableViewCell) {
+    func updateAllocation(withContentsOfCell cell: IncomeAllocationTableViewCell) {
         allocations[cell.row] = cell.allocationInfo
-        delegate?.viewModelDidChange(self)
+        delegate?.viewModelDidChange(self, tableViewNeedsDataReload: false)
     }
     
     func accountName(forCellAtRow row: Int) -> String {
@@ -56,12 +57,12 @@ class IncomeAllocationViewModel {
     
     func delete(allocationForCellAtRow row: Int) {
         allocations.remove(at: row)
-        delegate?.viewModelDidChange(self)
+        delegate?.viewModelDidChange(self, tableViewNeedsDataReload: true)
     }
     
     func persist(investmentID: String) {
         var accountEntries = makeSavingAccountEntries()
-        accountEntries.append(makeInvestmentAccountEntry(intestmentID: investmentID))
+        accountEntries.append(makeInvestmentAccountEntry(investmentID: investmentID))
         numberOfEntriesToPersist = accountEntries.count
         for entry in accountEntries {
             entry.delegate = self
@@ -97,10 +98,10 @@ class IncomeAllocationViewModel {
         return entries
     }
     
-    private func makeInvestmentAccountEntry(intestmentID: String) -> AccountEntryViewModel {
+    private func makeInvestmentAccountEntry(investmentID: String) -> AccountEntryViewModel {
         return AccountEntryViewModel(entry: AccountEntry(
             documentID: nil,
-            accountID: intestmentID,
+            accountID: investmentID,
             accountType: .investment,
             date: Date(),
             value: balance,

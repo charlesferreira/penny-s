@@ -9,4 +9,6 @@
 protocol IncomeAllocationTableViewCellDelegate: AnyObject {
     
     func tableViewCellDidChange(_ cell: IncomeAllocationTableViewCell)
+    
+    func tableViewCellDidUpdateValue(_ cell: IncomeAllocationTableViewCell)
 }

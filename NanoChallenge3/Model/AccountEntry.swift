@@ -14,7 +14,7 @@ struct AccountEntry {
     var accountID: String = ""
     var accountType: AccountType!
     var date: Date = Date()
-    var value: Double = 0
+    var value: Int = 0
     var note: String = ""
 }
 
@@ -24,7 +24,7 @@ extension AccountEntry: DocumentSerializable {
         guard let accountID = data["accountID"] as? String,
             let accountType = data["accountType"] as? String,
             let date = data["date"] as? Date,
-            let value = data["value"] as? Double,
+            let value = data["value"] as? Int,
             let note = data["note"] as? String else { return nil }
         
         self.init(documentID: documentID,

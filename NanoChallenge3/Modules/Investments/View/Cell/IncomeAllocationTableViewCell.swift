@@ -20,11 +20,11 @@ class IncomeAllocationTableViewCell: UITableViewCell {
     var row: Int!
     var accountPickerSelectedRow: Int!
     
-    var allocationInfo: (index: Int, value: Double) {
-        return (index: accountPickerSelectedRow, value: (valueField.text ?? "").numbersToDouble)
+    var allocationInfo: (index: Int, value: Int) {
+        return (index: accountPickerSelectedRow, value: (valueField.text ?? "").intValue)
     }
     
-    func setup(accountIndex index: Int, value: Double, cellRow row: Int) {
+    func setup(accountIndex index: Int, value: Int, cellRow row: Int) {
         self.row = row
         
         // account
@@ -60,8 +60,8 @@ class IncomeAllocationTableViewCell: UITableViewCell {
 
 extension IncomeAllocationTableViewCell: UITextFieldDelegate {
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        delegate?.tableViewCellDidChange(self)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        delegate?.tableViewCellDidUpdateValue(self)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -74,7 +74,8 @@ extension IncomeAllocationTableViewCell: UITextFieldDelegate {
             text = (textField.text ?? "") + string
         }
         
-        textField.text = text.numbersToDouble.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        textField.text = text.intValue.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999_99)
+        delegate?.tableViewCellDidUpdateValue(self)
         
         return false
     }
@@ -87,7 +88,7 @@ extension IncomeAllocationTableViewCell: UIPickerViewDelegate {
         if let hue = dataSource?.tableViewCell(self, tintForAccountAtIndex: row) {
             updateBackground(hue: hue)
         }
-        delegate?.tableViewCellDidChange(self)
+        delegate?.tableViewCellDidUpdateValue(self)
     }
 }
 

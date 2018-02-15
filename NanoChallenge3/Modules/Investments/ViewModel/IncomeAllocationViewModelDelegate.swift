@@ -8,7 +8,9 @@
 
 protocol IncomeAllocationViewModelDelegate: AnyObject {
     
-    func viewModelDidChange(_ viewModel: IncomeAllocationViewModel)
+    var leftover: Int { get }
+    
+    func viewModelDidChange(_ viewModel: IncomeAllocationViewModel, tableViewNeedsDataReload: Bool)
     
     func viewModelDidPersistData(_ viewModel: IncomeAllocationViewModel)
 }

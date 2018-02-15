@@ -74,7 +74,7 @@ class InvestmentViewController: BaseViewController {
         vm.liquidity = liquidityField.text ?? ""
         
         if initialValueField.isEnabled {
-            vm.initialValue = (initialValueField.text ?? "").numbersToDouble
+            vm.initialValue = (initialValueField.text ?? "").intValue
         }
         
         updateSaveButton()
@@ -100,7 +100,7 @@ class InvestmentViewController: BaseViewController {
     private func updateTextFields() {
         interestField.text = vm.interest
         liquidityField.text = vm.liquidity
-        initialValueField.text = vm.initialValue.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        initialValueField.text = vm.initialValue.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999_99)
         
         if vm.documentID != nil {
             initialValueField.isEnabled = false
@@ -169,7 +169,7 @@ extension InvestmentViewController: UITextFieldDelegate {
             text = (textField.text ?? "") + string
         }
         
-        textField.text = text.numbersToDouble.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999.99)
+        textField.text = text.intValue.asCurrency(symbol: "R$ ", zero: "", limit: 9_999_999_999_99)
         textFieldsChanged()
         
         return false

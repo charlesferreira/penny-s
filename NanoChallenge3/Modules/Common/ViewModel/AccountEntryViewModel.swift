@@ -21,7 +21,7 @@ class AccountEntryViewModel: ViewModel {
         return entry.date
     }
     
-    var value: Double {
+    var value: Int {
         return entry.value
     }
     
