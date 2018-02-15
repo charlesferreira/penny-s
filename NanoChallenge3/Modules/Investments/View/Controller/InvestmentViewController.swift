@@ -20,15 +20,21 @@ class InvestmentViewController: BaseViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var navBarItem: UINavigationItem!
     
+    private lazy var institutionVM = InstitutionViewModel()
+    private lazy var productVM = ProductViewModel()
     private lazy var vm = InvestmentViewModel()
     
     // prepara para criar um investimento
-    func setup(productID: String) {
-        vm.productID = productID
+    func setup(institutionVM: InstitutionViewModel, productVM: ProductViewModel) {
+        self.institutionVM = institutionVM
+        self.productVM = productVM
+        vm.productID = productVM.documentID!
     }
     
     // prepara para editar um investimento
-    func setup(viewModel vm: InvestmentViewModel) {
+    func setup(institutionVM: InstitutionViewModel, productVM: ProductViewModel, investmentVM vm: InvestmentViewModel) {
+        self.institutionVM = institutionVM
+        self.productVM = productVM
         self.vm = vm
     }
     
@@ -130,7 +136,7 @@ class InvestmentViewController: BaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? IncomeAllocationViewController {
-            controller.setup(viewModel: vm)
+            controller.setup(investmentVM: vm, productVM: productVM, institutionVM: institutionVM)
             return
         }
     }

@@ -32,7 +32,11 @@ class ProductListViewController: BaseViewController {
         // view model
         vm.delegate = self
         vm.observeCollection(forInstitutionID: institution.documentID!)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
         updateLayout()
     }
     
@@ -40,11 +44,6 @@ class ProductListViewController: BaseViewController {
         institutionNameLabel.text = institution.name
         balanceBackgroundTint.backgroundColor = UIColor(hue: CGFloat(institution.hue), saturation: 1, brightness: 1, alpha: 1)
         balanceLabel.text = institution.balance.asCurrency(symbol: "R$ ")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,7 +68,7 @@ class ProductListViewController: BaseViewController {
         // listar investimentos no produto
         if let controller = destination as? InvestmentListViewController {
             let hue = institution.hue
-            controller.setup(productVM: vm[indexPath.row], hue: hue)
+            controller.setup(institutionVM: institution, productVM: vm[indexPath.row], hue: hue)
         }
     }
     

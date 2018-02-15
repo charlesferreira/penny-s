@@ -14,9 +14,13 @@ class InvestmentNewEntryViewController: BaseViewController {
     @IBOutlet weak var valueField: UITextField!
     
     private var investmentVM: InvestmentViewModel!
+    private var productVM: ProductViewModel!
+    private var institutionVM: InstitutionViewModel!
     
-    func setup(investmentVM: InvestmentViewModel) {
+    func setup(investmentVM: InvestmentViewModel, productVM: ProductViewModel, institutionVM: InstitutionViewModel) {
         self.investmentVM = investmentVM
+        self.productVM = productVM
+        self.institutionVM = institutionVM
     }
     
     override func viewDidLoad() {
@@ -36,7 +40,7 @@ class InvestmentNewEntryViewController: BaseViewController {
         guard let controller = segue.destination as? IncomeAllocationViewController else { return }
         
         let income = valueField.text!.numbersToDouble
-        controller.setup(viewModel: investmentVM, income: income)
+        controller.setup(viewModel: investmentVM, productVM: productVM, institutionVM: institutionVM, income: income)
     }
 }
 

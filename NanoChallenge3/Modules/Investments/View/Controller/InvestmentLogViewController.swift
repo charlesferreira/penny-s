@@ -16,13 +16,15 @@ class InvestmentLogViewController: BaseViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
+    private lazy var institutionVM = InstitutionViewModel()
     private lazy var productVM = ProductViewModel()
     private lazy var investmentVM = InvestmentViewModel()
     private lazy var vm = AccountEntryListViewModel()
     
     private var hue: CGFloat!
     
-    func setup(productVM: ProductViewModel, investmentVM: InvestmentViewModel, hue: CGFloat) {
+    func setup(institutionVM: InstitutionViewModel, productVM: ProductViewModel, investmentVM: InvestmentViewModel, hue: CGFloat) {
+        self.institutionVM = institutionVM
         self.productVM = productVM
         self.investmentVM = investmentVM
         self.hue = hue
@@ -57,7 +59,7 @@ class InvestmentLogViewController: BaseViewController {
         // vai atualizar valor do investimento
         if let navigationController = segue.destination as? UINavigationController,
             let controller = navigationController.topViewController as? InvestmentNewEntryViewController {
-            controller.setup(investmentVM: investmentVM)
+            controller.setup(investmentVM: investmentVM, productVM: productVM, institutionVM: institutionVM)
         }
     }
     

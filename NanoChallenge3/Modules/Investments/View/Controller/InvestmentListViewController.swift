@@ -15,13 +15,15 @@ class InvestmentListViewController: BaseViewController {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
+    private lazy var institutionVM = InstitutionViewModel()
     private lazy var productVM = ProductViewModel()
     private lazy var vm = InvestmentListViewModel()
     
     private var institutionName: String!
     private var hue: CGFloat!
     
-    func setup(productVM: ProductViewModel, hue: Float) {
+    func setup(institutionVM: InstitutionViewModel, productVM: ProductViewModel, hue: Float) {
+        self.institutionVM = institutionVM
         self.productVM = productVM
         self.hue = CGFloat(hue)
     }
@@ -36,7 +38,11 @@ class InvestmentListViewController: BaseViewController {
         // view model
         vm.delegate = self
         vm.observeCollection(forProductID: productVM.documentID!)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
         updateLayout()
     }
     
@@ -45,11 +51,6 @@ class InvestmentListViewController: BaseViewController {
         navigationItem.backBarButtonItem?.title = institutionName
         balanceBackgroundTint.backgroundColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 1)
         balanceLabel.text = productVM.balance.asCurrency(symbol: "R$ ")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,7 +62,7 @@ class InvestmentListViewController: BaseViewController {
         // novo investimento no produto
         if let navigationController = segue.destination as? UINavigationController,
             let controller = navigationController.topViewController as? InvestmentViewController {
-            controller.setup(productID: productVM.documentID!)
+            controller.setup(institutionVM: institutionVM, productVM: productVM)
         }
     }
     
@@ -69,13 +70,13 @@ class InvestmentListViewController: BaseViewController {
         // editar investimento
         if let navigationController = destination as? UINavigationController,
             let controller = navigationController.topViewController as? InvestmentViewController {
-            controller.setup(viewModel: vm[indexPath.row])
+            controller.setup(institutionVM: institutionVM, productVM: productVM, investmentVM: vm[indexPath.row])
             return
         }
         
         // listar histórico do investimento
         if let controller = destination as? InvestmentLogViewController {
-            controller.setup(productVM: productVM, investmentVM: vm[indexPath.row], hue: hue)
+            controller.setup(institutionVM: institutionVM, productVM: productVM, investmentVM: vm[indexPath.row], hue: hue)
         }
     }
     

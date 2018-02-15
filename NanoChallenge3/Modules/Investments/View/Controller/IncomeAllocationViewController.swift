@@ -17,6 +17,8 @@ class IncomeAllocationViewController: BaseViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private lazy var investmentVM = InvestmentViewModel()
+    private lazy var productVM = ProductViewModel()
+    private lazy var institutionVM = InstitutionViewModel()
     private lazy var vm = IncomeAllocationViewModel()
     
     var income: Double!
@@ -25,17 +27,20 @@ class IncomeAllocationViewController: BaseViewController {
     }
     
     // prepara para criar um investimento
-    func setup(viewModel investmentVM: InvestmentViewModel) {
+    func setup(investmentVM: InvestmentViewModel, productVM: ProductViewModel, institutionVM: InstitutionViewModel) {
         self.investmentVM = investmentVM
+        self.productVM = productVM
+        self.institutionVM = institutionVM
         investmentVM.delegate = self
         income = investmentVM.initialValue
     }
     
     // prepara para atualizar um investimento
-    func setup(viewModel investmentVM: InvestmentViewModel, income: Double) {
+    func setup(viewModel investmentVM: InvestmentViewModel, productVM: ProductViewModel, institutionVM: InstitutionViewModel, income: Double) {
         self.investmentVM = investmentVM
+        self.productVM = productVM
+        self.institutionVM = institutionVM
         investmentVM.delegate = self
-        investmentVM.balance += income
         self.income = income
     }
     
@@ -53,7 +58,18 @@ class IncomeAllocationViewController: BaseViewController {
     
     @IBAction func saveTapped(_ sender: Any) {
         disableUserInteraction()
+        
+        // atualiza o investimento
+        investmentVM.balance += income
         investmentVM.persist()
+        
+        // atualiza o saldo do produto
+        productVM.balance += income
+        productVM.persist()
+        
+        // atualiza o saldo da instituição
+        institutionVM.balance += income
+        institutionVM.persist()
     }
     
     @IBAction func createCellTapped(_ sender: Any) {
