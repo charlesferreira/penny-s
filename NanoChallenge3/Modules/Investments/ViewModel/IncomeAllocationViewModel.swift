@@ -67,6 +67,18 @@ class IncomeAllocationViewModel {
             entry.delegate = self
             entry.persist()
         }
+        
+        updateSavingAccounts()
+    }
+    
+    func updateSavingAccounts() {
+        for allocation in allocations {
+            guard allocation.value != 0 else { continue }
+            
+            let account = accountsVM[allocation.index]
+            account.balance += allocation.value
+            account.persist()
+        }
     }
     
     private func makeSavingAccountEntries() -> [AccountEntryViewModel] {

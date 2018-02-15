@@ -28,6 +28,7 @@
 		564C2B8320352B2D0013582B /* InvestmentLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8220352B2D0013582B /* InvestmentLogViewController.swift */; };
 		564C2B8520352EB50013582B /* AccountEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8420352EB50013582B /* AccountEntryTableViewCell.swift */; };
 		564C2B8720352FB70013582B /* AccountEntryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8620352FB70013582B /* AccountEntryListViewModel.swift */; };
+		564C2B8920353B970013582B /* SavingAccountLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C2B8820353B970013582B /* SavingAccountLogViewController.swift */; };
 		565056EA203110E6008D3237 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056E9203110E6008D3237 /* ProductListViewModel.swift */; };
 		565056EC203113B5008D3237 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056EB203113B5008D3237 /* ProductViewController.swift */; };
 		565056EE2031140C008D3237 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565056ED2031140C008D3237 /* ProductViewModel.swift */; };
@@ -85,6 +86,7 @@
 		564C2B8220352B2D0013582B /* InvestmentLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentLogViewController.swift; sourceTree = "<group>"; };
 		564C2B8420352EB50013582B /* AccountEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntryTableViewCell.swift; sourceTree = "<group>"; };
 		564C2B8620352FB70013582B /* AccountEntryListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntryListViewModel.swift; sourceTree = "<group>"; };
+		564C2B8820353B970013582B /* SavingAccountLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingAccountLogViewController.swift; sourceTree = "<group>"; };
 		565056E9203110E6008D3237 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		565056EB203113B5008D3237 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		565056ED2031140C008D3237 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		56A5DDB320320026002FBACB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				564C2B8820353B970013582B /* SavingAccountLogViewController.swift */,
 				56A5DDB520320090002FBACB /* SavingAccountListViewController.swift */,
 				56A5DDBB20320700002FBACB /* SavingAccountViewController.swift */,
 			);
@@ -585,6 +588,7 @@
 				569A887220310FAD00620364 /* ProductTableViewCell.swift in Sources */,
 				5616D4222030541A008A59E6 /* DocumentSerializable.swift in Sources */,
 				5616D41320304A74008A59E6 /* InstitutionListViewModel.swift in Sources */,
+				564C2B8920353B970013582B /* SavingAccountLogViewController.swift in Sources */,
 				56B3C5512034D07700784386 /* IncomeAllocationTableViewCell.swift in Sources */,
 				5630E66620330DA000D6E2FA /* InvestmentViewModel.swift in Sources */,
 				564C2B8320352B2D0013582B /* InvestmentLogViewController.swift in Sources */,

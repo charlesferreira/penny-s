@@ -6,6 +6,8 @@
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
+import Foundation
+
 final class SavingAccountViewModel: ViewModel {
     
     private var savingAccount: SavingAccount
@@ -45,6 +47,15 @@ final class SavingAccountViewModel: ViewModel {
             savingAccount.balance = newValue
             isDirty = true
         }
+    }
+    
+    var summary: String {
+        return [
+            "Atual: ",
+            (100 * balance / goal).asCurrency(),
+            "% de ",
+            goal.asCurrency(symbol: "R$ ")
+        ].joined()
     }
     
     convenience init(documentID: String, data: [String: Any]) {

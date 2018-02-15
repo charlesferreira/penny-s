@@ -38,6 +38,11 @@ class InstitutionViewController: BaseViewController {
         nameField.becomeFirstResponder()
         nameField.addTarget(self, action: #selector(nameFieldChanged), for: .editingChanged)
         
+        if vm.documentID == nil {
+            vm.hue = Float(arc4random_uniform(128)) / Float(128)
+            print(vm.hue)
+        }
+        
         updateNavigationBar()
         updateBackgroundColor()
         updateNameField()

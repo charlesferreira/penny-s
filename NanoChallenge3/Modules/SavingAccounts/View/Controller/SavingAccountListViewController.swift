@@ -32,18 +32,18 @@ class SavingAccountListViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let subjectCellIndexPath = sender as? IndexPath else { return }
+        guard let indexPath = sender as? IndexPath else { return }
         
-        let savingAccountVM = vm[subjectCellIndexPath.row]
+        let savingAccountVM = vm[indexPath.row]
         
         if let controller = segue.destination as? SavingAccountViewController {
             controller.setup(viewModel: savingAccountVM)
         }
             
-//            // prepara para lista de produtos
-//        else if let controller = segue.destination as? ProductListViewController {
-//            controller.setup(documentID: documentID, name: name, hue: hue, balance: balance)
-//        }
+        // prepara para histórico da conta
+        else if let controller = segue.destination as? SavingAccountLogViewController {
+            controller.setup(accountVM: vm[indexPath.row])
+        }
     }
     
     // cria um unwind segue no storyboard (método intencionalmente vazio)
@@ -75,7 +75,7 @@ extension SavingAccountListViewController: UITableViewDelegate, UITableViewDataS
     
     // lista os produtos da instituição selecionada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "listProducts", sender: indexPath)
+        performSegue(withIdentifier: "showAccountLog", sender: indexPath)
     }
     
     // exibe as opções da célula ao swipe pra esquerda
